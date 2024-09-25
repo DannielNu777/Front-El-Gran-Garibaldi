@@ -29,10 +29,10 @@ class Body extends Component{
                             <Link to ="/shows-e-invitados">Shows e Invitados</Link>
                         </li>
                         <li>
-                            <Link to ="/body">Agrupaciones</Link>
+                            <Link to ="/groups">Agrupaciones</Link>
                         </li>
                         <li>
-                            <Link to ="/body">Arma tu Burrito</Link>
+                            <Link to ="/burrito">Arma tu Burrito</Link>
                         </li>
                         </ul>
                     </nav>

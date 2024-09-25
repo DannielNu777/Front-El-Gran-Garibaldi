@@ -9,7 +9,6 @@ import {Link} from "react-router-dom";
 class Main extends Component{
     render(){
         return( 
-          
       <body>  
         <link href="https://maxcdn.bootstrapcdn.com/font-..." rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"></link>
           <header class='header'> 
@@ -30,10 +29,10 @@ class Main extends Component{
                       <Link to ="/shows-e-invitados">Shows e Invitados</Link>
                   </li>
                   <li>
-                      <Link to ="/body">Agrupaciones</Link>
+                      <Link to ="/groups">Agrupaciones</Link>
                   </li>
                   <li>
-                      <Link to ="/body">Arma tu Burrito</Link>
+                      <Link to ="/burrito">Arma tu Burrito</Link>
                   </li>
                 </ul>
               </nav>

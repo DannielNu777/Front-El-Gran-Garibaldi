@@ -239,6 +239,7 @@ span{
 
 /* Section Body to the Information of Garibaldi
 */
+
 .info{
     width: 100%;
     height: 2000px;
@@ -312,39 +313,43 @@ span{
     filter: brightness(50%);
     position: relative;
 }
-
 .img_shows_main img{
     position: absolute;
-    align-items: center;
-
+    
+}
+.container2{
+    flex-direction: column;
 }
 .mariachi_vivo{
     z-index: 1;
     width: 40%;
     height: 40%;
     transform: translate(75%, 50%);
-
 }
 .events{
-    display: flex;
-    background-color: #924848;
+    display: grid;
+    background-color: #2c2929;
     width: 100%;
-    height: 3000px;
+    padding-top: 40px;
+    height: 2800px;
+
+    display:flex;
+    align-items: center;
+    flex-direction: column;
 }
 .luis-container{
-    background-color: rgb(255, 255, 255);
-    width: 1400px;
-    height: 600px;
-    margin-top: 0%;
+    background-color: rgb(182, 19, 19);
+    width: 1370px;
+    height: 500px;
+    margin-bottom: 200px;
     margin-left: 5%;
     margin-right: 5%;
-    align-items: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    justify-content: space-between;
 }
 .luis-cont1{
     width: 100%;
+    height: 100%;
     flex-direction: column;
     margin-bottom: 10px;
     overflow: hidden;
@@ -353,6 +358,7 @@ span{
     transform: scale(1.2);
 }
 .luis-cont2{
+    width: 100%;
     display: flex;
     height: 100%;
     overflow: hidden;
@@ -362,23 +368,136 @@ span{
 }
 .luis-cont3{
     width: 100%;
+    height: 100%;
     flex-direction: column;
-    justify-content: space-between;
     overflow: hidden;
 }
 .luis-cont3:hover img {
     transform: scale(1.2);
 }
 .camd-container{
-    background-color: rgb(255, 255, 255);
-    width: 1400px;
-    height: 600px;
-    margin-top: 0%;
+    background-color:rgb(225, 0, 0);
+    width: 1370px;
+    height: 500px;
+    margin-bottom: 200px;
     margin-left: 5%;
     margin-right: 5%;
-    align-items: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    justify-content: space-between;
+}
+.camd-cont1{
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.camd-cont1:hover img {
+    transform: scale(1.2);
+}
+.camd-cont2{
+    width: 100%;
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+}
+.camd-cont2:hover img {
+    transform: scale(1.2);
+}
+.camd-cont3{
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+}
+.camd-cont3:hover img {
+    transform: scale(1.2);
+}
+.alan-container{
+    background-color:rgb(225, 0, 0);
+    width: 1370px;
+    height: 500px;
+    margin-bottom: 200px;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
+/* Views Cart
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
+
+.img-cart1{
+    padding-top: 0%;
+    display: flex;
+    z-index: 1;
+    width: 40%;
+    height: 100%;
+    transform: translate(75%, 10%);
+}
+.info-ayce{
+    width: 100%;
+    height: 1000px;
+    background-color: white;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+.background-page{
+    display: grid;
+    grid-template-rows: 1140px, max-content;
+}
+
+/*
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/ 
+.groups_img{
+    position: relative;
+}
+.home-groups{
+    position: absolute;
+    top: 30%; 
+    left: 50%; 
+    transform: translate(-45%, 135%); 
+    color: white; 
+    padding: 10px;
+    font-size: 40px
+}
+.groups_m{
+    width: 100%;
+    z-index: -1;
+
+}
+.groupings_m{
+    position: absolute; 
+    transform: translate(-300%, 0.5%); 
+    width: 300px;
+}
+.publicity{
+    position: absolute; 
+    transform: translate(-170%, 80%); 
+    width: 40%;
+}
+.info-groups{
+    justify-content: center;
+    display: flex;
+    align-items:flex-start;
+    background-color: #000000;
+    width: 100%;
+    height: 1000px;
+
+}
+.info-groups-text{ 
+    text-align: center;
+    color: white; 
+    padding-top: 60px;
+    font-size: 40px;
+}
+.groups-container{
+    display: grid;
+    background-color: #fffefe;
+
+    align-items: center;
+    flex-direction: column;
+}
