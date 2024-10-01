@@ -32,7 +32,6 @@ a:hover{
 .Main_Image{
     max-width: 100%; 
 }
-
 .zone_c{
     display: flex;
     align-items: center;
@@ -46,7 +45,7 @@ a:hover{
 .zone_c2{
     align-items: center;
     display: flex;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(31, 185, 33);
     width: 100%;
     height: 150px;
 }
@@ -167,15 +166,12 @@ span{
     background-color: rgb(0, 0, 0);
     width: 100%;
     height: 100px;
-
 }
-
 .zone_social{
     display: flex;
     justify-content: space-between;
     align-items:center;
     padding-left: 50%;
-    
 }
 .button-name {
     align-items: center;
@@ -210,18 +206,14 @@ span{
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-    
 }
-
 .button-name:focus {
     box-shadow:
     #ff9b04 0 0 0 1.5px inset,
     rgba(255, 255, 255, 0.4) 0 2px 4px,
     rgba(255, 255, 255, 0.3) 0 7px 13px -3px,
     #ff9b04 0 -3px 0 inset;
-    
 }
-
 .button-name:hover {
     box-shadow:
     rgba(45, 35, 66, 0.3) 0 4px 8px,
@@ -229,17 +221,13 @@ span{
     #b07507 0 -3px 0 inset;
     transform: translateY(-2px);
     justify-content: space-between;
-
 }
-
 .button-name:active {
     box-shadow: #dfc207 0 3px 7px inset;
     transform: translateY(2px);
 }
-
 /* Section Body to the Information of Garibaldi
 */
-
 .info{
     width: 100%;
     height: 2000px;
@@ -307,7 +295,6 @@ span{
 }
 /* Section Shows
 */
-
 .Main_Image3{
     width: 100%;
     filter: brightness(50%);
@@ -332,7 +319,6 @@ span{
     width: 100%;
     padding-top: 40px;
     height: 2800px;
-
     display:flex;
     align-items: center;
     flex-direction: column;
@@ -423,11 +409,9 @@ span{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
-
 /* Views Cart
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
-
 .img-cart1{
     padding-top: 0%;
     display: flex;
@@ -448,7 +432,6 @@ span{
     display: grid;
     grid-template-rows: 1140px, max-content;
 }
-
 /*
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */ 
@@ -467,7 +450,6 @@ span{
 .groups_m{
     width: 100%;
     z-index: -1;
-
 }
 .groupings_m{
     position: absolute; 
@@ -480,24 +462,248 @@ span{
     width: 40%;
 }
 .info-groups{
+    text-align: center;
+    align-items: center;
     justify-content: center;
+    flex-direction: column;
     display: flex;
     align-items:flex-start;
     background-color: #000000;
     width: 100%;
-    height: 1000px;
-
+    height: 800px;
 }
 .info-groups-text{ 
-    text-align: center;
+    transform: translate(40%, 0.5%); 
+    margin-bottom: 40px;
     color: white; 
-    padding-top: 60px;
     font-size: 40px;
 }
 .groups-container{
+    background-color: rgb(255, 255, 255);
+    width: 1370px;
+    height: 400px;
+    margin-bottom: 200px;
     display: grid;
-    background-color: #fffefe;
+    margin-right: 5%;
+    margin-left: 5%;
+    grid-template-columns: repeat(5, 1fr);
+}
+.column-groups-container{
+    width: 400px;
+    background-color: #ffffff;
+}
+.column-groups-space{
+    width: 60px;
+    background-color: #000000;
 
+}
+.intern-column{
+    display: flex;
+    justify-content: center;
+}
+.img_G{
+    margin-top: 30px;
+    width: 320px;
+    height: 213px;
+}
+.img_NG{
+    margin-top: 30px;
+    width: 286px;
+    height: 243px;
+}
+.img_F{
+    margin-top: 30px;
+    width: 308px;
+    height: 245px;
+}
+.button-groups{
+    margin-top: 50px;
     align-items: center;
+    appearance: none;
+    background-color: #d0a30f;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow:
+    rgba(247, 246, 246, 0.2) 0 2px 4px,
+    rgba(255, 255, 255, 0.15) 0 7px 13px -3px,
+    #ffffff 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395a;
+    cursor: pointer;
+    display: inline-flex;
+    height: 48px;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow 0.15s, transform 0.15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+.button-groups:focus {
+    box-shadow:
+    #ff9b04 0 0 0 1.5px inset,
+    rgba(255, 255, 255, 0.4) 0 2px 4px,
+    rgba(255, 255, 255, 0.3) 0 7px 13px -3px,
+    #ff9b04 0 -3px 0 inset;
+    
+}
+.button-groups:hover {
+    box-shadow:
+    rgba(45, 35, 66, 0.3) 0 4px 8px,
+    rgba(45, 35, 66, 0.2) 0 7px 13px -3px,
+    #b07507 0 -3px 0 inset;
+    transform: translateY(-2px);
+    justify-content: space-between;
+}
+.button-groups:active {
+    box-shadow: #dfc207 0 3px 7px inset;
+    transform: translateY(2px);
+}
+/*
+EVENTS ZONE
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
+.img-events-main{
+    width: 100%;
+    position: relative;
+}
+.img-private-events{
+    position:absolute;
+    width: 40%;
+    margin-top: -160px;
+    transform: translate(-215%, 5%);
+}
+.text-events{
+    position: absolute;
+    top: 30%; 
+    left: 50%; 
+    transform: translate(-95%, 135%); 
+    color: white; 
+    padding: 10px;
+    font-size: 30px 
+}
+.events-img-main{
+    position: relative;
+}
+.button-events{
+    text-emphasis-color: white;
+    align-items: center;
+    appearance: none;
+    background-color: #d0a30f;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow:
+    rgba(255, 255, 255, 0.2) 0 2px 4px,
+    rgba(255, 255, 255, 0.15) 0 7px 13px -3px,
+    #3c0909 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395a;
+    cursor: pointer;
+    display: inline-flex;
+    height: 48px;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: absolute;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow 0.15s, transform 0.15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transform: translate(-570%, 935%); 
+}
+.button-events:focus {
+    box-shadow:
+    #ff9b04 0 0 0 1.5px inset,
+    rgba(0, 0, 0, 0.4) 0 2px 4px,
+    rgba(0, 0, 0, 0.3) 0 7px 13px -3px,
+    #ff9b04 0 -3px 0 inset;
+    transform: translate(-570%, 935%); 
+}
+.button-events:hover {
+    box-shadow:
+    rgba(230, 113, 3, 0.3) 0 4px 8px,
+    rgba(228, 172, 5, 0.934) 0 7px 13px -3px,
+    #b07507 0 -3px 0 inset;
+    transform: translateY(-2px);
+    justify-content: space-between;
+    transform: translate(-570%, 935%); 
+}
+.button-events:active {
+    box-shadow: #dfc207 0 3px 7px inset;
+    transform: translateY(2px);
+    transform: translate(-570%, 935%); 
+}
+.events-container{
+    display: flex;
     flex-direction: column;
+    width: 100%;
+    background-color: #000000;
+    height: 2500px;
+    align-items: center;
+}
+.container-img-events{
+    display: flex;
+    width: 90%;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    height: 400px;
+    display: flex;
+    background-color: black;
+    overflow: hidden;
+}
+.images-events{
+    width: 100%;
+    height: 100%;
+    margin-right: 10%;
+    margin-left: 10%;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 5%;
+    transition: transform 0.3s ease;
+}
+.container-img-events:hover img {
+    transform: scale(1.1);
+}
+.text-event{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    font-size: larger;
+    padding-top: 40px;
+    margin-bottom: -40px;
+}
+.characteristics{
+    width: 75%;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    margin-top: 200px;
+    height: 400px;
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.intern-column-event{
+    display: flex;
+    justify-content: center;
 }

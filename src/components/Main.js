@@ -32,7 +32,7 @@ class Main extends Component{
                       <Link to ="/groups">Agrupaciones</Link>
                   </li>
                   <li>
-                      <Link to ="/burrito">Arma tu Burrito</Link>
+                    <Link to ="/events">Eventos Privados</Link>
                   </li>
                 </ul>
               </nav>

@@ -2,14 +2,16 @@ import { Component } from "react";
 import { Outlet } from "react-router-dom";
 import Isologo from '../../src/assets/img/ISOLOGO_GARIBALDI.png';
 import {Link} from "react-router-dom";
-import Groups_I from '../assets/img/groups-main.png';
-import Groupings from '../assets/img/GARIBALDI_GROUPS.png';
-import Publicity from '../assets/img/publicity.png';
-import MariachiG from '../assets/img/mariachi-gustavo.png';
-import NuevaG from '../assets/img/nueva-generacion.png';
-import Frontera from '../assets/img/frontera-popular.png';
+import MainEvent from '../assets/img/Events-main-img.png';
+import PrivateE from '../assets/img/private-events-main.png';
+import ImgE1 from '../assets/img/event-img1.png';
+import ImgE2 from '../assets/img/event-img2.png';
+import ImgE3 from '../assets/img/event-img3.png';
+import ImgE4 from '../assets/img/restaurant1.png';
+import ImgE5 from '../assets/img/restaurant2.png';
+import ImgE6 from '../assets/img/restaurant3.png';
 
-class Groups extends Component{
+class Events extends Component{
     render(){
         return(
             <body>
@@ -40,48 +42,60 @@ class Groups extends Component{
                     </nav>
                 </div>
                 </header>
-                <section class = 'container-groups-section'>
-                    <div className="groups-img">
-                        <img className="groups_m" src={Groups_I}/>
-                        <a className="home-groups">Agrupaciones de la Casa</a>
-                        <img className="groupings_m" src={Groupings}/>
-                        <img className="publicity" src = {Publicity}/>
+                <section>
+                    <div className="events-img-main">
+                        <img className='img-events-main' src ={MainEvent}/>
+                        <img className='img-private-events' src ={PrivateE}/>
+                        <em class='text-events'>Deja en nuestras manos tus fechas especiales</em>
+                        <button class="button-events">COTIZA TU EVENTO</button>
                     </div>
-                    <div className="info-groups">
-                        <div className="info-groups-text">
-                            <a>CONOCE NUESTRAS AGRUPACIONES MÚSICALES</a>
+
+                    <div className="events-container">
+                        
+                        <em class = 'text-event'>Nos Adaptamos a ti y a Todas tus Celebraciones</em>
+                        
+                        <div className="container-img-events" >
+                            <img className ='images-events' src ={ImgE1}/>
                         </div>
+                        <em class = 'text-event'>Tus Grados</em>
+                        
+                        <div className="container-img-events">
+                            <img className='images-events' src ={ImgE2}/>
+                        </div>
+                        <em class = 'text-event'>Tus Quince Años</em>
 
-                        <div className="groups-container">
-                            <div className="column-groups-container">
-                                <div className="intern-column">
-                                    <img className="img_G" src = {MariachiG}/>
+                        <div className="container-img-events">
+                            <img className='images-events' src ={ImgE3}/>
+                        </div>
+                        <div className="characteristics">
+                            <div className="column-events-container">
+                                <div className="intern-column-event">
+                                    <img className="img_G" src = {ImgE4}/>
                                 </div>
-                                <button class="button-groups" >El Mariachi de Gustavo</button>
-                            </div>
-                            <div className="column-groups-space">
+                                <p>Going for a night out on town? Want to grab something to eat but cannot decide? 
+                                    The variety of restaurants available to you in the core of downtown is endless 
+                                    guaranteed to impress.</p>
                             </div>
 
                             <div className="column-groups-container">
-                                <div className="intern-column">
-                                    <img className="img_NG" src = {NuevaG}/>
+                                <div className="intern-column-event">
+                                    <img className="img_NG" src = {ImgE5}/>
                                 </div>
-                                <button class="button-groups" r>Nueva Generación</button>
-                            </div>
-                            <div className="column-groups-space">
+                                <p>Going for a night out on town? Want to grab something to eat but cannot decide? 
+                                    The variety of restaurants available to you in the core of downtown is endless 
+                                    guaranteed to impress.</p>
                             </div>
 
                             <div className="column-groups-container">
-                                <div className="intern-column">
-                                    <img className="img_F" src = {Frontera}/>
+                                <div className="intern-column-event">
+                                    <img className="img_F" src = {ImgE6}/>
                                 </div>
-                                <button class="button-groups">Frontera Popular</button>
+                                <p>Going for a night out on town? Want to grab something to eat but cannot decide? 
+                                    The variety of restaurants available to you in the core of downtown is endless 
+                                    guaranteed to impress.</p>
                             </div>
                         </div>
-
                     </div>
-                    
-
                 </section>
                 <footer className='container2'>
                 <div className= 'contacts'>
@@ -114,10 +128,16 @@ class Groups extends Component{
                             <button class="button-name" role="Facebook">Facebook</button>
                         </div>
                     </div>
-                </footer>
+            </footer>
+
                 <Outlet />
             </body>
+
+
+
+
         );
     }
 }
-export default Groups;
+
+export default Events;
