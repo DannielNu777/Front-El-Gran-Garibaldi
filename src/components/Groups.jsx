@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import Isologo from '../../src/assets/img/ISOLOGO_GARIBALDI.png';
 import {Link} from "react-router-dom";
 import Groups_I from '../assets/img/groups-main.png';
@@ -8,9 +8,15 @@ import Publicity from '../assets/img/publicity.png';
 import MariachiG from '../assets/img/mariachi-gustavo.png';
 import NuevaG from '../assets/img/nueva-generacion.png';
 import Frontera from '../assets/img/frontera-popular.png';
+import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
-class Groups extends Component{
-    render(){
+
+function Groups(){
+    const navigate = useNavigate();
+    const handleClickM = () => navigate('/mariachi_banda')
+    const handleClickN = () => navigate('/new_generation')
+    const handleClickF = () => navigate('/frontera_popular')
         return(
             <body>
                 <header class='header'> 
@@ -57,7 +63,8 @@ class Groups extends Component{
                                 <div className="intern-column">
                                     <img className="img_G" src = {MariachiG}/>
                                 </div>
-                                <button class="button-groups" >El Mariachi de Gustavo</button>
+                                <button class="button-groups" onClick={handleClickM} >El Mariachi de Gustavo</button>
+                                    
                             </div>
                             <div className="column-groups-space">
                             </div>
@@ -66,7 +73,7 @@ class Groups extends Component{
                                 <div className="intern-column">
                                     <img className="img_NG" src = {NuevaG}/>
                                 </div>
-                                <button class="button-groups" r>Nueva Generación</button>
+                                <button class="button-groups" onClick={handleClickN} >Nueva Generación</button>
                             </div>
                             <div className="column-groups-space">
                             </div>
@@ -75,7 +82,7 @@ class Groups extends Component{
                                 <div className="intern-column">
                                     <img className="img_F" src = {Frontera}/>
                                 </div>
-                                <button class="button-groups">Frontera Popular</button>
+                                <button class="button-groups" onClick={handleClickF} >Frontera Popular</button>
                             </div>
                         </div>
 
@@ -119,5 +126,5 @@ class Groups extends Component{
             </body>
         );
     }
-}
+
 export default Groups;
