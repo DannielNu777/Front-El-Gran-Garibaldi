@@ -50,7 +50,7 @@ class Shows extends Component {
                   <Link to="/groups">Agrupaciones</Link>
                 </li>
                 <li>
-                  <Link to="/burrito">Arma tu Burrito</Link>
+                  <Link to ="/events">Eventos Privados</Link>
                 </li>
               </ul>
             </nav>
@@ -69,8 +69,6 @@ class Shows extends Component {
               <img className="shows Image4" src={Luis4} />
               <img className="shows Image5" src={Luis5} />
             </div>
-
-
             <div className="shows-container">
               <img className="shows Image1" src={Alan1} />
               <img className="shows Image2" src={Alan2} />
