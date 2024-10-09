@@ -1,17 +1,17 @@
 import React, {Component} from  'react';
 import logo from './logo.png';
 import './App.css';
-import Main from './components/Main.jsx';
-import Body from './components/Body.jsx';
+import Main from './components/Main.js';
+import Body from './components/Body.js';
 import Styles from './components/Styles.css';
 import  {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import Shows from './components/Shows.jsx';
-import Groups from './components/Groups.jsx';
-import Events from './components/Events.jsx';
-import Cart from './components/cart.jsx';
-import MariachiBanda from './components/MariachiBanda.jsx';
-import NuevaGeneracion from './components/NuevaGeneracion.jsx';
-import FronteraPopular from './components/FronteraPopular.jsx';
+import Shows from './components/Shows.js';
+import Groups from './components/Groups.js';
+import Events from './components/Events.js';
+import Cart from './components/cart.js';
+import MariachiBanda from './components/MariachiBanda.js';
+import NuevaGeneracion from './components/NuevaGeneracion.js';
+import FronteraPopular from './components/FronteraPopular.js';
 
 function App() {
   return (
