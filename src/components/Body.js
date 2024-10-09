@@ -143,6 +143,7 @@ class Body extends Component {
       </body>
     );
   }
+
 }
 
 export default Body;

@@ -70,6 +70,7 @@ class Shows extends Component {
               <img className="shows Image5" src={Luis5} />
             </div>
 
+
             <div className="shows-container">
               <img className="shows Image1" src={Alan1} />
               <img className="shows Image2" src={Alan2} />
@@ -93,7 +94,6 @@ class Shows extends Component {
             </div>
           </div>
         </section>
-
         <footer className="container2">
           <div className="contacts">
             <div className="zone_contacts">

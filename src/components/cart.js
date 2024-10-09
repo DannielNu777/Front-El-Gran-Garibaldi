@@ -91,6 +91,7 @@ class cart extends Component {
             </div>
           </div>
 
+
           <div className="social">
             <div className="zone_social">
               <button class="button-name" role="Whatsapp">
