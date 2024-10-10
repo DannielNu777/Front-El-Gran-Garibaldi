@@ -19,7 +19,9 @@ class Main extends Component {
         <header class="header">
           <div className="Navbar">
             <nav>
-              <img className="Iso_logo" src={Isologo} />
+              <Link to="/login">
+                <img className="Iso_logo" src={Isologo} />{" "}
+              </Link>
               <ul>
                 <li>
                   <Link to="/">Inicio</Link>
@@ -37,7 +39,7 @@ class Main extends Component {
                   <Link to="/groups">Agrupaciones</Link>
                 </li>
                 <li>
-                <Link to ="/events">Eventos Privados</Link>
+                  <Link to="/events">Eventos Privados</Link>
                 </li>
               </ul>
             </nav>

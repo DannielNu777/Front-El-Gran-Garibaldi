@@ -1,0 +1,310 @@
+/*Front-Login*/
+* {
+    box-sizing: border-box;
+    --bg-light: #efefef;
+    --bg-dark: #000000;
+    --bg-grey: #464646;
+    --clr: #f9af3a;
+    --clr-alpha: #9c9c9c60;
+}
+
+.Container-login {
+    background-color: var(--bg-grey);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.background-log {
+    margin: 5%;
+    background-color: var(--bg-dark);
+    padding: 5%;
+    padding-left: 7%;
+    padding-right: 7%;
+    border-radius: 10%;
+}
+
+.form {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.column {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form .input-span {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form input[type="email"],
+.form input[type="password"],
+.form input[type="text"] {
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.25rem;
+    width: 100%;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--clr-alpha);
+    outline: 2px solid var(--bg-grey);
+}
+
+.form input[type="email"]:focus,
+.form input[type="password"]:focus,
+.form input[type="text"]:focus {
+    outline: 2px solid var(--clr);
+}
+
+.h1 {
+    align-self: center;
+    color: var(--clr);
+    font-weight: 600;
+}
+
+.label {
+    align-self: flex-start;
+    color: var(--clr);
+    font-weight: 600;
+}
+
+.form .submit {
+    padding: 1rem 0.75rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 3rem;
+    background-color: var(--clr-alpha);
+    color: var(--bg-light);
+    border: none;
+    cursor: pointer;
+    transition: all 300ms;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form .submit:hover {
+    background-color: var(--clr);
+    color: var(--bg-dark);
+}
+
+.span {
+    text-decoration: none;
+    color: var(--bg-grey);
+}
+
+.span a {
+    color: var(--clr);
+}
+
+/*Reservations*/
+
+.Navbar-1 {
+    background-image: url("../assets/img/Main_Image.png");
+    background-size: cover;
+    height: 10em;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Reserv-cont {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    margin-top: 10px;
+    gap: 10vh;
+}
+
+.diamond-a {
+    width: 100px;
+    height: 100px;
+    background-color: #f9af3a;
+    position: relative;
+    transform: rotate(45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000000;
+}
+
+.diamond-n {
+    box-sizing: border-box;
+    width: 70%;
+    height: 70%;
+    border: 2px solid #000000;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.span-numb {
+    transform: rotate(-45deg);
+    color: #000000;
+}
+
+.span-col {
+    color: #000000;
+}
+
+.labels-cont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 10px;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.l1 {
+    background-color: #efefef;
+    color: #000000;
+    padding: 5%;
+    border-radius: 20%;
+}
+
+.l2 {
+    background-color: #f9af3a;
+    color: #000000;
+    padding: 5%;
+    border-radius: 20%;
+    font-size: 85%;
+}
+
+.l3 {
+    background-color: #000000;
+    color: #efefef;
+    grid-area: 2/1/3/3;
+    padding: 5%;
+    border-radius: 20%;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 3%;
+    margin: auto;
+    color: #efefef;
+    justify-items: center;
+    border: 2px solid #efefef;
+    width: 10000px;
+    padding: 10%;
+}
+
+.mes {
+    grid-area: 1/1/2/8;
+}
+
+.dias-l-1 {
+    grid-area: 2/1/3/2;
+}
+
+.dias-l-2 {
+    grid-area: 2/2/3/3;
+}
+
+.dias-l-3 {
+    grid-area: 2/3/3/4;
+}
+
+.dias-l-4 {
+    grid-area: 2/4/3/5;
+}
+
+.dias-l-5 {
+    grid-area: 2/5/3/6;
+}
+
+.dias-l-6 {
+    grid-area: 2/6/3/7;
+}
+
+.dias-l-7 {
+    grid-area: 2/7/3/8;
+}
+
+.dia-1 {
+    grid-area: 3/1/8/2;
+}
+
+.dia-2 {
+    grid-area: 3/2/8/3;
+}
+
+.dia-3 {
+    grid-area: 3/3/8/4;
+}
+
+.dia-4 {
+    grid-area: 3/4/8/5;
+}
+
+.dia-5 {
+    grid-area: 3/5/8/6;
+}
+
+.dia-6 {
+    grid-area: 3/6/8/7;
+}
+
+.dia-7 {
+    grid-area: 3/7/8/8;
+}
+
+#selector {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-size: 14px;
+}
+
+#selector:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.form input[type="text-1"] {
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.25rem;
+    width: 60%;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #efefef;
+    outline: 2px solid var(--bg-grey);
+}
+
+.l4 {
+    color: #f9af3a;
+    border-radius: 20%;
+}
