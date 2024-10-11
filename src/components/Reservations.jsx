@@ -3,20 +3,21 @@ import Isologo from "../../src/assets/img/ISOLOGO_GARIBALDI.png";
 import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 import log from "../assets/img/logo.png";
+import { useState } from "react";
+import DatePicker, {registerLocale} from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import es from 'date-fns/locale/es';
+registerLocale("es", es);
 
-class Reservations extends Component {
-  render() {
+
+
+function Reservations() {
+  const [startDate, setStartDate] = useState(new Date());
+{
     return (
       <body>
-        <link
-          href="https://maxcdn.bootstrapcdn.com/font-..."
-          rel="stylesheet"
-          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-          crossorigin="anonymous"
-        ></link>
-        <header class="header">
-          <div className="Navbar-1">
-            <nav>
+        <section class="Container-reservation">
+        <nav>
               <img className="Iso_logo" src={Isologo} />{" "}
               <div class="Reserv-cont">
                 <div class="diamond-a">
@@ -33,30 +34,22 @@ class Reservations extends Component {
                 </div>
               </div>
             </nav>
-          </div>
-        </header>
-        <section class="Container-login">
-          <div class="background-log">
+          <div class="background-reservation">
             <form class="form">
-              <div class="calendar">
-                <div class="mes">Octubre</div>
-                <div class="dias-l-1">L</div>
-                <div class="dias-l-2">M</div>
-                <div class="dias-l-3">M</div>
-                <div class="dias-l-4">J</div>
-                <div class="dias-l-5">V</div>
-                <div class="dias-l-6">S</div>
-                <div class="dias-l-7">D</div>
-                <div class="dia-1">1</div>
-                <div class="dia-2">2</div>
-                <div class="dia-3">3</div>
-                <div class="dia-4">4</div>
-                <div class="dia-5">5</div>
-                <div class="dia-6">6</div>
-                <div class="dia-7">7</div>
-              </div>
+              <DatePicker className="calendar"
+              placeholderText="Reserva tu Fecha Especial"
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
+              peekNextMonth
+              withPortal
+              portalId="root-portal"
+              showMonthDropdown
+              showYearDropdown
+              dropdownMode="select"
+              locale="es"
+              />
               <label for="selector" class="l3">
-                Cantidad de personas:
+                Selecciona la Cantidad de personas:
               </label>
               <select id="selector" name="selector">
                 <option value="opcion1">1 persona</option>
@@ -65,7 +58,7 @@ class Reservations extends Component {
                 <option value="opcion4">+10 personas</option>
               </select>
               <label for="selector" class="l3">
-                Horario:
+                Selecciona el Horario de tu Preferencia:
               </label>
               <input type="text-1" name="horario" id="horario" />
               <img className="Iso_logo" src={log} />{" "}
@@ -78,5 +71,4 @@ class Reservations extends Component {
     );
   }
 }
-
 export default Reservations;
