@@ -50,7 +50,7 @@ class SingUp extends Component {
                   <label for="phone" class="label">
                     Telefono
                   </label>
-                  <input type="text" name="phone" id="phone" />
+                  <input type="tel" name="phone" id="phone" />
                 </span>
                 <span class="input-span">
                   <label for="password" class="label">

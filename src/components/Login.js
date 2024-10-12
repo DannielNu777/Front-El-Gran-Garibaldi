@@ -42,7 +42,7 @@ class Login extends Component {
               <span class="span">
                 <a href="#">¿Olvidó su contraseña?</a>
               </span>
-              <Link to="/reservations" class="submit" type="submit">
+              <Link to="/admin-main" class="submit" type="submit">
                 <a>Log in</a>
               </Link>
               <span class="span">
