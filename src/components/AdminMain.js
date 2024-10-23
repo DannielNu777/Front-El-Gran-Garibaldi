@@ -5,6 +5,22 @@ import { Link } from "react-router-dom";
 import log from "../assets/img/logo.png";
 
 class AdminMain extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      token: null,
+    };
+  }
+
+  componentDidMount() {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      this.setState({ token: null });
+    } else {
+      this.setState({ token });
+    }
+  }
+
   render() {
     return (
       <body>
@@ -29,9 +45,15 @@ class AdminMain extends Component {
               <Link to="/admin-users">
                 <button class="l4">Usuarios</button>
               </Link>
-              <button class="l4">Multimedia</button>
-              <button class="l4">Comentarios</button>
-              <button class="l4">Reservas</button>
+              <Link to="/admin-multimedia">
+                <button class="l4">Multimedia</button>
+              </Link>
+              <Link to="/admin-coment">
+                <button class="l4">Comentarios</button>
+              </Link>
+              <Link to="/admin-reservation">
+                <button class="l4">Reservas</button>
+              </Link>
             </form>
           </div>
         </section>

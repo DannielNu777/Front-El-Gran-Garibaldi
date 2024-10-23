@@ -17,7 +17,10 @@ import Login from "./components/Login.js";
 import SingUp from "./components/SingUp.js";
 import Reservations from "./components/Reservations.js";
 import AdminMain from "./components/AdminMain.js";
-import AdminUsers from "./components/AdminUsers.js";
+import AdminUsers from "./components/AdminUsers.jsx";
+import AdminReser from "./components/AdminReser.js";
+import AdminComent from "./components/AdminComent.js";
+import AdminMulti from "./components/AdminMulti.js";
 
 function App() {
   return (
@@ -36,6 +39,9 @@ function App() {
       <Route path="/reservations" element={<Reservations />}></Route>
       <Route path="/admin-main" element={<AdminMain />}></Route>
       <Route path="/admin-users" element={<AdminUsers />}></Route>
+      <Route path="/admin-reservation" element={<AdminReser />}></Route>
+      <Route path="/admin-coment" element={<AdminComent />}></Route>
+      <Route path="/admin-multimedia" element={<AdminMulti />}></Route>
     </Routes>
   );
 }
