@@ -25,6 +25,7 @@ function Reservaciones_Info()
             setEndDate(end);
         };
         
+
     {
     return (
         <body>
@@ -35,7 +36,9 @@ function Reservaciones_Info()
                     <div class="diamond-a">
                     <div class="diamond-n">
                         <div class="span-numb">
+
                         <span class="span-col">2</span>
+
                         </div>
                     </div>
                     </div>
@@ -48,6 +51,7 @@ function Reservaciones_Info()
                 </nav>
             <div class="background-reservation-info">
                 <form class="form-info">
+
                             <div class='container-form1'>
                                     <label >Nombres</label>
                                     <input type="text-large" name="text" id="text" />
@@ -94,9 +98,11 @@ function Reservaciones_Info()
                         <input type="checkbox"  />
                         <label>Acepto los términos y condiciones</label>
                             <img className="Iso_logo" src={log} />{" "}
+
                     <form id ="external-form" className="form-input-button">
                         <input class= "button-continue" type="submit"  value="Continuar" onClick={handleClickReservations}/>
                     </form>
+
                     </div>
                 </form>
             </div>
@@ -106,4 +112,5 @@ function Reservaciones_Info()
         );
     }
 }
+
 export default Reservaciones_Info;

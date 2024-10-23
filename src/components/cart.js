@@ -6,6 +6,7 @@ import Main_I from '../assets/img/Main_Image.png';
 import Cart1 from '../assets/img/cart1.png';
 import AYC from '../assets/img/ayc.png';
 
+
 class cart extends Component{
     render(){
         return(
@@ -93,5 +94,6 @@ class cart extends Component{
             </body>
         );
     }
+
 }
 export default cart;

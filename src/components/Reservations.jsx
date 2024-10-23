@@ -7,6 +7,7 @@ import { useState } from "react";
 import DatePicker, {registerLocale} from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import es from 'date-fns/locale/es';
+
 import addMonths from 'date-fns/addMonths';
 import moment from 'moment';
 import { useNavigate } from 'react-router-dom';
@@ -25,6 +26,7 @@ function Reservations() {
             setEndDate(end);
         };
         const [selected, setSelected] = useState(new Date());
+
 {
     return (
       <body>
@@ -48,6 +50,7 @@ function Reservations() {
             </nav>
           <div class="background-reservation">
             <form class="form">
+
               <DatePicker 
                 showIcon
                 locale="es"
@@ -60,6 +63,7 @@ function Reservations() {
                 selectsRange
                 inline
                 showDisabledMonthNavigation
+
               />
               <label for="selector" class="l3">
                 Selecciona la Cantidad de personas:
@@ -73,6 +77,7 @@ function Reservations() {
               <label for="selector" class="l3">
                 Selecciona el Horario de tu Preferencia:
               </label>
+
                 <DatePicker 
                   selected={selected}
                   onChange={(date) => setSelected(date)}        
@@ -86,6 +91,7 @@ function Reservations() {
               <form id ="external-form" className="form-input-button">
                   <input class= "button-continue" type="submit"  value="Continuar" onClick={handleClickReservations}/>
               </form>
+
             </form>
           </div>
         </section>

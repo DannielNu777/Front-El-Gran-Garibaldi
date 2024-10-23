@@ -19,7 +19,9 @@ function Reservaciones_F(){
                     <div class="diamond-a">
                     <div class="diamond-n">
                         <div class="span-numb">
+
                         <span class="span-col">3</span>
+
                         </div>
                     </div>
                     </div>
@@ -30,6 +32,7 @@ function Reservaciones_F(){
                     </div>
                 </div>
                 </nav>
+
             <div class="background-reservation-final">
                 <form class="form-reservations-final">
                         <label for="selector" class="l3">
