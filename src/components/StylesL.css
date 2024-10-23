@@ -1,0 +1,629 @@
+/*Front-Login*/
+* {
+    box-sizing: border-box;
+    --bg-light: #efefef;
+    --bg-dark: #000000;
+    --bg-grey: #464646;
+    --clr: #f9af3a;
+    --clr-alpha: #9c9c9c60;
+}
+
+
+.Container-login {
+    background-color: var(--bg-grey);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.background-log {
+    margin: 5%;
+    background-color: var(--bg-dark);
+    padding: 5%;
+    padding-left: 7%;
+    padding-right: 7%;
+    border-radius: 10%;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.column {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form .input-span {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form input[type="email"],
+.form input[type="password"],
+.form input[type="text"] {
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.25rem;
+    width: 100%;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--clr-alpha);
+    outline: 2px solid var(--bg-grey);
+}
+
+.form input[type="email"]:focus,
+.form input[type="password"]:focus,
+.form input[type="text"]:focus {
+    outline: 2px solid var(--clr);
+}
+
+.h1 {
+    align-self: center;
+    color: var(--clr);
+    font-weight: 600;
+}
+
+.label {
+    align-self: flex-start;
+    color: var(--clr);
+    font-weight: 600;
+}
+
+.form .submit {
+    padding: 1rem 0.75rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 3rem;
+    background-color: var(--clr-alpha);
+    color: var(--bg-light);
+    border: none;
+    cursor: pointer;
+    transition: all 300ms;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form .submit:hover {
+    background-color: var(--clr);
+    color: var(--bg-dark);
+}
+
+.span {
+    text-decoration: none;
+    color: var(--bg-grey);
+}
+
+.span a {
+    color: var(--clr);
+}
+
+/*Reservations*/
+.Container-reservation{
+    flex-direction: column;
+    position: relative;
+    background-image: url("C:\Users\danni\OneDrive\Escritorio\REACT\practice\garibaldi\src\assets\img\Background_reservations.png");
+    background-size: cover;
+    height: 70rem;
+    filter: brightness(80%);
+}
+.background-reservation{
+    margin-top: 7%;
+    margin-bottom: 10%;
+    margin-right: 30%;
+    margin-left: 30%;
+    background-color: var(--bg-dark);
+    padding: 5%;
+    padding-left: 7%;
+    padding-right: 7%;
+    border-radius: 10%;
+    align-items: center;
+    justify-content: center;
+}
+.Navbar-1 {
+    position: relative;
+    background-image: url("C:\Users\danni\OneDrive\Escritorio\REACT\practice\garibaldi\src\assets\img\Background_reservations.png");
+    background-size: cover;
+    height: 30em;
+    filter: brightness(80%);
+}
+.form img{
+    position: absolute;
+    margin-top: 29em;
+    margin-left: 25em;
+}
+.form label[for="selector"]{
+    color: #f9af3a;
+    font-size: 20px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.Reserv-cont {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    margin-top: 10px;
+    gap: 10vh;
+}
+
+.diamond-a {
+    width: 100px;
+    height: 100px;
+    background-color: #f9af3a;
+    position: relative;
+    transform: rotate(45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000000;
+}
+
+.diamond-n {
+    box-sizing: border-box;
+    width: 70%;
+    height: 70%;
+    border: 2px solid #000000;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.span-numb {
+    transform: rotate(-45deg);
+    color: #000000;
+}
+
+.span-col {
+    color: #000000;
+}
+
+.labels-cont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 10px;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.l1 {
+    background-color: #efefef;
+    color: #000000;
+    padding: 5%;
+    border-radius: 20%;
+}
+
+.l2 {
+    background-color: #f9af3a;
+    color: #000000;
+    padding: 5%;
+    border-radius: 20%;
+    font-size: 85%;
+}
+
+.l3 {
+    background-color: #000000;
+    color: #efefef;
+    grid-area: 2/1/3/3;
+    padding-top: 1%;
+    border-radius: 20%;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 3%;
+    margin: auto;
+    background-color: #efefef;
+    justify-items: center;
+    border: 2px solid #efefef;
+    width: 10000px;
+    padding: 10%;
+}
+
+
+#selector {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-size: 14px;
+}
+
+#selector:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.form input[type="text-1"] {
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.25rem;
+    width: 60%;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #efefef;
+    outline: 2px solid var(--bg-grey);
+}
+
+.l4 {
+    color: #f9af3a;
+    border-radius: 20%;
+
+}
+
+/*
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    Reservations_Info => Section
+*/
+.background-reservation-info{
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-dark);
+    width: 60%;
+    height: 100vh;
+    margin-top: 7%;
+    margin-left: 20%;
+    border-radius: 15%;
+    
+}
+.container-grid-form{
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30%;
+    width: 100%;
+    height: 100%;
+}
+.container-form1{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    grid-area: 1/1/2/2;
+    gap: 10px 0;
+}
+.container-form2{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    grid-area: 1/2/2/3;
+    gap: 10px 0;
+    margin-top: -30px;
+}
+.form-info{
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 0.1fr);
+    column-gap: 200px;
+    row-gap: 100px;
+    width: 70%;
+}
+.container-form3{
+    
+    grid-area: 2/1/3/3;
+    align-self: center;
+    justify-self: center;
+}
+.container-form3 img{
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 100px;
+}
+.container-checkbox{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+.centering-checkbox{
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+}
+.container-form1 label{
+    color: #f9af3a;
+    border-radius: 20%;
+    font-size: 1.3em;
+    text-align: center;
+}
+.container-form2 label{
+    color: #f9af3a;
+    border-radius: 20%;
+    font-size: 1.3em;
+    text-align: center;
+}
+.form-input-button input[type="submit"]{
+    width: 400px;
+    background-color:#000000;
+    color: #f9af3a;
+    font-size: 40px;
+    border: none;
+    margin-top: 10%;
+}
+.container-form2 input[type="email"],
+.container-form2 input[type="text-large"]{
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.25rem;
+    width: 100%;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--clr-alpha);
+    outline: 2px solid var(--bg-white);
+}
+.container-form2 input[type="email"]:focus,
+.container-form2 input[type="text-large"]:focus{
+    outline: 2px solid var(--clr);
+}
+.container-form1 input[type="text-large"]{
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.25rem;
+    width: 100%;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--clr-alpha);
+    outline: 2px solid var(--bg-white);
+}
+/*
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Reservations Final
+*/
+.centering-checkbox label{
+    font-size: medium;
+    color: #f9af3a;
+}
+.background-reservation-final{
+    width: 60%;
+    height: 130vh;
+    margin-left: 20%;
+    background-color: var(--bg-dark);
+    padding-top: 3%;
+    padding-left: 10%;
+    padding-right: 10%;
+    border-radius: 10%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.form-container-info-final{
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 50px;
+    width: 100%;
+}
+.form-reservations-final{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+.container-info-final-1{
+    align-items: center;
+    justify-content: center;
+    margin-right: 5%;
+    width: 110%;
+    color: #ffffff;
+    background-color: #464646;
+    border-radius: 1.5rem;
+}
+.container-info-final-1 p{
+    font-size: medium;
+    padding: 3.5%;
+    text-align: center;
+}
+.container-info-final-2{
+    justify-content: center;
+    width: 100%;
+    color: #f9af3a;
+    margin-left: 15%;
+}
+.container-info-final-2 label{
+    align-items: center;
+    margin-bottom: 20px;
+}
+.decoration-container p{
+    font-size: medium;
+    text-align: center;
+    color: #f9af3a;
+}
+.information-count{
+    font-size: xx-large;
+    color: #f9af3a;
+}
+.form-reservations-final label{
+    color: #f9af3a;
+    text-align: center;
+    font-size:larger;
+}
+.form-reservations-final img{
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 25%;
+}
+.centering-checkbox-footer{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+/*
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    New Order Firts Page
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
+.button-new-order{
+    align-items: center;
+    background-color: white;
+    height: 50px;
+    border: 2px solid #ffffff;
+    border-radius: 0.9em;
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+    justify-content: center;
+}
+.button-new-order span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+}
+.button-new-order:hover {
+    background-color: #b1b7be;
+}
+.background-log-order {
+    text-align: center;
+    margin: 15%;
+    background-color: var(--bg-dark);
+    padding: 5%;
+    padding-left: 7%;
+    padding-right: 10%;
+    border-radius: 4.5rem;
+}
+.background-log-order label {
+    text-align: center;
+}
+.input-span-order{
+    display: flex;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+
+}
+/*
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    New Order Second Page
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
+.Navbar-order{
+    align-items: center;
+    background-color: #000000;
+    height: 5em;
+}
+.Navbar-order h1{
+    color: #f9af3a;
+    font-size: xx-large;
+}
+.cajabuscar {
+    float: none;
+    width: 100%;
+    max-width: 453px;
+    margin-bottom: 25px;
+    margin-top: 29px;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    text-align: left;
+}
+
+#buscarform {
+    padding: 0;
+    float: left;
+    clear: both;
+    width: 100%;
+    position: relative;
+}
+#buscarform fieldset { float: left }
+
+#buscarform .search {
+    font-size: 20px;
+    top: 0px;
+    color: #FFF;
+    background: #33BCF2;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 9px;
+    height: 24px;
+    width: 24px;
+    text-align: center;
+}
+#buscarform fieldset { width: 100% }
+
+#s {
+    width: 100%;
+    background-color: #fff;
+    float: left;
+    padding: 8px 0;
+    text-indent: 10px;
+    color: #555555;
+    border: 1px solid #fff; 
+    box-sizing: border-box;
+    height: 42px;
+}
+.button{
+    right: 0;
+    top: 0;
+    padding: 9px 0;
+    float: right;
+    border: 0;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    text-align: center;
+    padding-top: 10px;
+    color: #a4a4a4;
+    transition: all 0.25s linear;
+    background: transparent;
+    z-index: 10;
+    position: absolute;
+    border: 0;
+    vertical-align: top;
+}
+.section-order1{
+    align-items: center;
+}
+.Container-order-all {
+    background-color: var(--bg-grey);
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100%;
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

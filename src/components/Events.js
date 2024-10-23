@@ -129,13 +129,8 @@ class Events extends Component{
                         </div>
                     </div>
             </footer>
-
                 <Outlet />
             </body>
-
-
-
-
         );
     }
 }
