@@ -7,6 +7,7 @@ import { useState } from "react";
 const apiURL = process.env.REACT_APP_API_URL;
 
 const Login = () => {
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -18,7 +19,6 @@ const Login = () => {
   // Manejar el envío del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const response = await fetch(
         `${process.env.REACT_APP_API_URL}/api/login`,
@@ -30,7 +30,7 @@ const Login = () => {
           body: JSON.stringify({ email, contrasena: password }),
         }
       );
-
+      
       const data = await response.json();
 
       if (response.ok) {
@@ -53,6 +53,7 @@ const Login = () => {
     } catch (error) {
       console.error("Error en la conexión con la API", error);
       alert("Error de conexión con el servidor");
+
     }
   };
 
@@ -115,3 +116,4 @@ const Login = () => {
 };
 
 export default Login;
+

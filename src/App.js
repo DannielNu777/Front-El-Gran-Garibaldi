@@ -21,6 +21,10 @@ import AdminUsers from "./components/AdminUsers.jsx";
 import AdminReser from "./components/AdminReser.js";
 import AdminComent from "./components/AdminComent.js";
 import AdminMulti from "./components/AdminMulti.js";
+import Reservaciones_Info from './components/Reservaciones_Info.js';
+import Reservaciones_F from './components/Reservaciones_Final.js';
+import { useState } from "react";
+
 
 function App() {
   return (
@@ -42,6 +46,9 @@ function App() {
       <Route path="/admin-reservation" element={<AdminReser />}></Route>
       <Route path="/admin-coment" element={<AdminComent />}></Route>
       <Route path="/admin-multimedia" element={<AdminMulti />}></Route>
+      <Route path="/reservations_info" element={<Reservaciones_Info />}></Route>
+      <Route path="/reservations_F" element={<Reservaciones_F />}></Route>
+
     </Routes>
   );
 }
