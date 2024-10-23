@@ -4,12 +4,27 @@ import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 import log from "../assets/img/logo.png";
 import { useState } from "react";
-import DatePicker from "react-datepicker";
+import DatePicker, {registerLocale} from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import addMonths from 'date-fns/addMonths';
+import es from 'date-fns/locale/es';
+import { useNavigate } from 'react-router-dom';
+import moment from 'moment';
+registerLocale("es", es);
 
 
-function Reservaciones_Info() {
-    const [startDate, setStartDate] = useState(new Date());
+function Reservaciones_Info() 
+    {
+        const navigate = useNavigate();
+        const handleClickReservations = () => navigate('/reservations_F')
+        const [startDate, setStartDate] = useState(new Date());
+        const [endDate, setEndDate] = useState(null);
+        const onChange = (dates) => {
+        const [start, end] = dates;
+            setStartDate(start);
+            setEndDate(end);
+        };
+        
 
     {
     return (
@@ -21,7 +36,9 @@ function Reservaciones_Info() {
                     <div class="diamond-a">
                     <div class="diamond-n">
                         <div class="span-numb">
-                        <span class="span-col">1</span>
+
+                        <span class="span-col">2</span>
+
                         </div>
                     </div>
                     </div>
@@ -34,35 +51,58 @@ function Reservaciones_Info() {
                 </nav>
             <div class="background-reservation-info">
                 <form class="form-info">
-                    <div class='container-form1'>
-                            <label >Nombre</label>
-                            <input type="text-1" name="horario" id="horario" />
-                            <label >Apellido</label>
-                            <input type="text-1" name="horario" id="horario" />
-                            <label >Apellido</label>
-                            <input type="text-1" name="horario" id="horario" />
-                            <input type="text-1" name="horario" id="horario" />
-                            <label >¿Posee alguna Alergia?</label>
-                            <input type="checkbox" />
-                                <label>Si</label>
-                            <input type="checkbox" />
-                                <label>No</label>
-                    </div>
-                    <div class='container-form2'>
-                            <label >Correo</label>
-                            <input type="text-1" name="horario" id="horario" />
-                            <label >Confirma tu Correo</label>
-                            <input type="text-1" name="horario" id="horario" />
-                            <label >Comentarios Adicionales</label>
-                            <input type="text-1" name="horario" id="horario" />
-                            <label >¿Cual?</label>
-                            <input type="text-1" name="horario" id="horario" />
-                    </div>
+
+                            <div class='container-form1'>
+                                    <label >Nombres</label>
+                                    <input type="text-large" name="text" id="text" />
+                                    <label >Apellidos</label>
+                                    <input type="text-large" name="text" id="text" />
+                                    <label >Fecha de Nacimiento</label>
+                                    <DatePicker
+                                        placeholderText="Introduce tu fecha"
+                                        selected={startDate}
+                                        onChange={(date) => setStartDate(date)}
+                                        peekNextMonth
+                                        withPortal
+                                        portalId="root-portal"
+                                        showMonthDropdown
+                                        showYearDropdown
+                                        timeFormat="HH:mm"
+                                        scale="es"
+                                        isClearable
+                                        form="external-form"
+                                        />
+                                    <label >¿Posee alguna Alergia?</label>
+                                    <div className="centering-checkbox">
+                                        <div className="container-checkbox">
+                                        <input type="checkbox" />
+                                            <label>Si</label>
+                                        </div>
+                                        <div className="container-checkbox">
+                                        <input type="checkbox" />
+                                            <label>No</label>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class='container-form2'>
+                                    <label >Correo</label>
+                                    <input type="email" name="email" id="email" />
+                                    <label >Confirma tu Correo</label>
+                                    <input type="email" name="email" id="email" />
+                                    <label >Comentarios Adicionales</label>
+                                    <input type="text-large" name="text" id="text" />
+                                    <label >¿Que alergia posees?</label>
+                                    <input type="text-large" name="text" id="text" />
+                            </div>
                     <div class='container-form3'>
                         <input type="checkbox"  />
                         <label>Acepto los términos y condiciones</label>
                             <img className="Iso_logo" src={log} />{" "}
-                            <h1 class="l4">Continuar</h1>
+
+                    <form id ="external-form" className="form-input-button">
+                        <input class= "button-continue" type="submit"  value="Continuar" onClick={handleClickReservations}/>
+                    </form>
+
                     </div>
                 </form>
             </div>

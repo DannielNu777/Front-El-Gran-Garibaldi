@@ -7,12 +7,26 @@ import { useState } from "react";
 import DatePicker, {registerLocale} from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import es from 'date-fns/locale/es';
+
+import addMonths from 'date-fns/addMonths';
+import moment from 'moment';
+import { useNavigate } from 'react-router-dom';
 registerLocale("es", es);
 
 
-
 function Reservations() {
-  const [startDate, setStartDate] = useState(new Date());
+  const navigate = useNavigate();
+  const handleClickReservations = () => navigate('/reservations_Info')
+
+        const [startDate, setStartDate] = useState(new Date());
+        const [endDate, setEndDate] = useState(null);
+        const onChange = (dates) => {
+        const [start, end] = dates;
+            setStartDate(start);
+            setEndDate(end);
+        };
+        const [selected, setSelected] = useState(new Date());
+
 {
     return (
       <body>
@@ -36,17 +50,20 @@ function Reservations() {
             </nav>
           <div class="background-reservation">
             <form class="form">
-              <DatePicker className="calendar"
-              placeholderText="Reserva tu Fecha Especial"
-              selected={startDate}
-              onChange={(date) => setStartDate(date)}
-              peekNextMonth
-              withPortal
-              portalId="root-portal"
-              showMonthDropdown
-              showYearDropdown
-              dropdownMode="select"
-              locale="es"
+
+              <DatePicker 
+                showIcon
+                locale="es"
+                selected={startDate}
+                onChange={onChange}
+                minDate={new Date()}
+                maxDate={addMonths(new Date(), 5)}
+                startDate={startDate}
+                endDate={endDate}
+                selectsRange
+                inline
+                showDisabledMonthNavigation
+
               />
               <label for="selector" class="l3">
                 Selecciona la Cantidad de personas:
@@ -60,9 +77,21 @@ function Reservations() {
               <label for="selector" class="l3">
                 Selecciona el Horario de tu Preferencia:
               </label>
-              <input type="text-1" name="horario" id="horario" />
+
+                <DatePicker 
+                  selected={selected}
+                  onChange={(date) => setSelected(date)}        
+                  showTimeSelect
+                  showTimeSelectOnly
+                  dateFormat="h:mm aa"
+                  timeIntervals={15}
+                  showTimeCaption={true}
+                />
               <img className="Iso_logo" src={log} />{" "}
-              <h1 class="l4">Continuar</h1>
+              <form id ="external-form" className="form-input-button">
+                  <input class= "button-continue" type="submit"  value="Continuar" onClick={handleClickReservations}/>
+              </form>
+
             </form>
           </div>
         </section>
