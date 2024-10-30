@@ -15,7 +15,7 @@ import NuevaGeneracion from "./components/NuevaGeneracion.js";
 import FronteraPopular from "./components/FronteraPopular.js";
 import Login from "./components/Login.js";
 import SingUp from "./components/SingUp.js";
-import Reservations from "./components/Reservations.js";
+import Reservations from "./components/Reservations.jsx";
 import AdminMain from "./components/AdminMain.js";
 import AdminUsers from "./components/AdminUsers.jsx";
 import AdminReser from "./components/AdminReser.js";
