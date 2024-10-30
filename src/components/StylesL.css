@@ -154,17 +154,19 @@
     filter: brightness(80%);
 }
 .background-reservation{
-    margin-top: 0%;
+    flex-direction: column;
+    display: flex;
     margin-bottom: 10%;
-    margin-right: 30%;
-    margin-left: 30%;
+    margin-right: 10%;
+    margin-left: 24%;
     background-color: var(--bg-dark);
-    padding: 5%;
-    padding-left: 7%;
-    padding-right: 7%;
-    border-radius: 2.5em;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 20px;
+    border-radius: 4.5em;
     align-items: center;
     justify-content: center;
+    width: 60%;
 }
 .Navbar-1 {
     position: relative;
@@ -174,7 +176,7 @@
     background-size: cover;
     height: 30em;
     filter: brightness(80%);
-
+}
 .form img{
     position: absolute;
     margin-top: 29em;
@@ -320,7 +322,6 @@ span {
 */
 .background-reservation-info{
     display: flex;
-    align-self: center;
     justify-self: center;
     align-items: center;
     justify-content: center;
@@ -328,8 +329,9 @@ span {
     width: 60%;
     height: 100vh;
     margin-top: 7%;
-    margin-left: 20%;
-    border-radius: 15%;
+    margin-left: 7%;
+    border-radius: 2.5rem;
+    margin-right: 7%
     
 }
 .container-grid-form{
@@ -403,8 +405,24 @@ span {
     color: #f9af3a;
     font-size: 40px;
     border: none;
-    margin-top: 10%;
+    margin-top: 20%;
+    margin-bottom: 50%;
+    justify-content: center;
 }
+
+.form-input-button-info input[type="submit"]{
+    width: 400px;
+    background-color:#000000;
+    color: #f9af3a;
+    font-size: 40px;
+    border: none;
+    margin-bottom: 0%;
+    margin-left: 50%;
+    justify-content: center;
+}
+
+
+
 .container-form2 input[type="email"],
 .container-form2 input[type="text-large"]{
     border-radius: 0.5rem;
@@ -461,6 +479,28 @@ Reservations Final
     column-gap: 50px;
     width: 100%;
 }
+
+
+.form-input-button-final input[type="submit"]{
+    width: 400px;
+    background-color:#000000;
+    color: #f9af3a;
+    font-size: 40px;
+    border: none;
+
+    margin-top: 50%;
+    justify-content: center;
+}
+.form-input-button-final img{
+    position: absolute;
+}
+.Iso_logo-final {
+    max-width: 150px;
+    padding-bottom: 15px;
+    position: absolute;
+    transform: translate(20%, 30%);
+}
+
 .form-reservations-final{
     display: flex;
     align-items: center;
@@ -662,7 +702,6 @@ Reservations Final
     align-items: center;
     justify-content: center;
 }
-<<<<<<< HEAD
 .background-log-order2 {
     text-align: center;
     margin-top: 15%;
@@ -701,8 +740,6 @@ Reservations Final
 
 
 
-=======
->>>>>>> 6ce63ae8db9d63d1e924e1a37257b974385004d2
 
 /*Admin-Main*/
 
@@ -1047,13 +1084,8 @@ Reservations Final
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
-<<<<<<< HEAD
 .footer-reservations{
     background-color: #4e4a4a;
     height: 200px;
     width: 100%;
 }
-=======
-
-
->>>>>>> 6ce63ae8db9d63d1e924e1a37257b974385004d2
