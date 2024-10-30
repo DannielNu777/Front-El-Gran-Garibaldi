@@ -174,7 +174,7 @@
     background-size: cover;
     height: 30em;
     filter: brightness(80%);
-}
+
 .form img{
     position: absolute;
     margin-top: 29em;
@@ -662,6 +662,7 @@ Reservations Final
     align-items: center;
     justify-content: center;
 }
+<<<<<<< HEAD
 .background-log-order2 {
     text-align: center;
     margin-top: 15%;
@@ -700,6 +701,8 @@ Reservations Final
 
 
 
+=======
+>>>>>>> 6ce63ae8db9d63d1e924e1a37257b974385004d2
 
 /*Admin-Main*/
 
@@ -1044,8 +1047,13 @@ Reservations Final
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
+<<<<<<< HEAD
 .footer-reservations{
     background-color: #4e4a4a;
     height: 200px;
     width: 100%;
 }
+=======
+
+
+>>>>>>> 6ce63ae8db9d63d1e924e1a37257b974385004d2

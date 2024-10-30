@@ -117,6 +117,7 @@ const showAlert = () => {
 
     return (
         <body>
+<<<<<<< HEAD
             <section className="Container-reservation">
                 <nav>
                     <img className="Iso_logo" src={Isologo} />
@@ -132,13 +133,33 @@ const showAlert = () => {
                             <label className="l1">Fecha Elegida</label>
                             <label className="l2">Fecha Disponible</label>
                             <label className="l3">No Disponible</label>
+=======
+            <section class="Container-reservation">
+            <nav>
+                <img className="Iso_logo" src={Isologo} />{" "}
+                <div class="Reserv-cont">
+                    <div class="diamond-a">
+                    <div class="diamond-n">
+                        <div class="span-numb">
+
+                        <span class="span-col">3</span>
+
+>>>>>>> 6ce63ae8db9d63d1e924e1a37257b974385004d2
                         </div>
                     </div>
                 </nav>
 
+<<<<<<< HEAD
                 <div className="background-reservation-final">
                     <form className="form-reservations-final" onSubmit={handleSubmit}>
                         <label className="l3">¿Dentro de tus acompañantes hay algún niño?</label>
+=======
+            <div class="background-reservation-final">
+                <form class="form-reservations-final">
+                        <label for="selector" class="l3">
+                            ¿Dentro de tus acompañantes hay algún niño?
+                        </label>
+>>>>>>> 6ce63ae8db9d63d1e924e1a37257b974385004d2
                         <div className="centering-checkbox">
                             <div className="container-checkbox">
                                     <input type="checkbox" checked={hay_nino} onChange={() => sethay_nino(!hay_nino)} />

@@ -25,6 +25,7 @@ function Reservaciones_Info() {
         const handleContinue = (e) => {
             e.preventDefault();
         
+<<<<<<< HEAD
             // Display the data in an alert
             alert(`
             Start Date: ${startDate.toLocaleDateString()}
@@ -63,6 +64,22 @@ function Reservaciones_Info() {
                             <div className="span-numb">
                                 <span className="span-col">2</span>
                             </div>
+=======
+
+    {
+    return (
+        <body>
+            <section class="Container-reservation">
+        <nav>
+                <img className="Iso_logo" src={Isologo} />{" "}
+                <div class="Reserv-cont">
+                    <div class="diamond-a">
+                    <div class="diamond-n">
+                        <div class="span-numb">
+
+                        <span class="span-col">2</span>
+
+>>>>>>> 6ce63ae8db9d63d1e924e1a37257b974385004d2
                         </div>
                     </div>
                     <div className="labels-cont">
@@ -71,6 +88,7 @@ function Reservaciones_Info() {
                         <label className="l3">No Disponible</label>
                     </div>
                 </div>
+<<<<<<< HEAD
             </nav>
             <div className="background-reservation-info">
                 <form className="form-info" onSubmit={handleContinue}>
@@ -96,12 +114,61 @@ function Reservaciones_Info() {
                             <div className="container-checkbox">
                                 <input type="checkbox" checked={hasAllergy} onChange={() => setHasAllergy(!hasAllergy)} />
                                 <label>Si</label>
+=======
+                </nav>
+            <div class="background-reservation-info">
+                <form class="form-info">
+
+                            <div class='container-form1'>
+                                    <label >Nombres</label>
+                                    <input type="text-large" name="text" id="text" />
+                                    <label >Apellidos</label>
+                                    <input type="text-large" name="text" id="text" />
+                                    <label >Fecha de Nacimiento</label>
+                                    <DatePicker
+                                        placeholderText="Introduce tu fecha"
+                                        selected={startDate}
+                                        onChange={(date) => setStartDate(date)}
+                                        peekNextMonth
+                                        withPortal
+                                        portalId="root-portal"
+                                        showMonthDropdown
+                                        showYearDropdown
+                                        timeFormat="HH:mm"
+                                        scale="es"
+                                        isClearable
+                                        form="external-form"
+                                        />
+                                    <label >¿Posee alguna Alergia?</label>
+                                    <div className="centering-checkbox">
+                                        <div className="container-checkbox">
+                                        <input type="checkbox" />
+                                            <label>Si</label>
+                                        </div>
+                                        <div className="container-checkbox">
+                                        <input type="checkbox" />
+                                            <label>No</label>
+                                        </div>
+                                    </div>
+>>>>>>> 6ce63ae8db9d63d1e924e1a37257b974385004d2
                             </div>
                             <div className="container-checkbox">
                                 <input type="checkbox" checked={!hasAllergy} onChange={() => setHasAllergy(false)} />
                                 <label>No</label>
                             </div>
+<<<<<<< HEAD
                         </div>
+=======
+                    <div class='container-form3'>
+                        <input type="checkbox"  />
+                        <label>Acepto los términos y condiciones</label>
+                            <img className="Iso_logo" src={log} />{" "}
+
+                    <form id ="external-form" className="form-input-button">
+                        <input class= "button-continue" type="submit"  value="Continuar" onClick={handleClickReservations}/>
+                    </form>
+
+>>>>>>> 6ce63ae8db9d63d1e924e1a37257b974385004d2
                     </div>
                     <div className='container-form2'>
                         <label>Correo</label>
@@ -126,4 +193,8 @@ function Reservaciones_Info() {
     );
 }
 
+<<<<<<< HEAD
 export default Reservaciones_Info;
+=======
+export default Reservaciones_Info;
+>>>>>>> 6ce63ae8db9d63d1e924e1a37257b974385004d2
