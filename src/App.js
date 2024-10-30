@@ -17,10 +17,15 @@ import FronteraPopular from "./components/FronteraPopular.js";
 import Login from "./components/Login.js";
 import SingUp from "./components/SingUp.js";
 import Reservations from "./components/Reservations.jsx";
+
 import Reservaciones_Info from './components/Reservaciones_Info.js';
 import Reservaciones_F from './components/Reservaciones_Final.js';
 import Order_One from "./components/front-waiter1.js";
 import New_Order from './components/new-order.js';
+
+import Reservations from "./components/Reservations.js";
+
+
 import AdminMain from "./components/AdminMain.js";
 import AdminUsers from "./components/AdminUsers.jsx";
 import AdminReser from "./components/AdminReser.js";

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import DatePicker, { registerLocale } from "react-datepicker";
 import { useNavigate } from "react-router-dom";
 import { useReservationContext } from "./ReservationsContext";
+
 import "react-datepicker/dist/react-datepicker.css";
 import es from "date-fns/locale/es";
 import { format, getDay } from "date-fns";
@@ -27,6 +28,7 @@ function Reservations() {
       Número de Personas: ${cantidad_personas}
     `);
   };
+
 
   // Filtrar las horas según el día de la semana
   const filterTime = (time) => {
@@ -127,6 +129,7 @@ function Reservations() {
       </div>  
     </section>
   );
+
 }
 
 export default Reservations;
