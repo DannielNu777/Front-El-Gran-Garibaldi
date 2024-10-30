@@ -1,116 +1,133 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Isologo from "../../src/assets/img/ISOLOGO_GARIBALDI.png";
-import { Outlet } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import log from "../assets/img/logo.png";
-import { useState } from "react";
-import DatePicker, {registerLocale} from "react-datepicker";
+import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import addMonths from 'date-fns/addMonths';
 import es from 'date-fns/locale/es';
-import { useNavigate } from 'react-router-dom';
-import moment from 'moment';
+import { useReservationContext } from "./ReservationsContext"; // Asegúrate de que la ruta es correcta
+
 registerLocale("es", es);
 
+function Reservaciones_Info() {
+    const navigate = useNavigate();
+    const { updateReservationData } = useReservationContext(); // Obtener la función para actualizar el contexto
 
-function Reservaciones_Info() 
-    {
-        const navigate = useNavigate();
-        const handleClickReservations = () => navigate('/reservations_F')
-        const [startDate, setStartDate] = useState(new Date());
-        const [endDate, setEndDate] = useState(null);
-        const onChange = (dates) => {
-        const [start, end] = dates;
-            setStartDate(start);
-            setEndDate(end);
-        };
+    const [startDate, setStartDate] = useState(new Date());
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [confirmEmail, setConfirmEmail] = useState('');
+    const [comentarios_adicionales, setcomentarios_adicionales] = useState('');
+    const [allergy, setAllergy] = useState('');
+    const [hasAllergy, setHasAllergy] = useState(false);
+
+        const handleContinue = (e) => {
+            e.preventDefault();
         
+            // Display the data in an alert
+            alert(`
+            Start Date: ${startDate.toLocaleDateString()}
+            First Name: ${firstName}
+            Last Name: ${lastName}
+            Email: ${email}
+            Confirm Email: ${confirmEmail}
+            comentarios_adicionales: ${comentarios_adicionales}
+            Allergy: ${allergy}
+            Has Allergy: ${hasAllergy}
+            `);
+        
+            // Update reservation data (assuming this is your original intent)
+            updateReservationData({
+            startDate,
+            firstName,
+            lastName,
+            email,
+            confirmEmail,
+            comentarios_adicionales,
+            allergy,
+            hasAllergy
+            });
 
-    {
+
+        navigate('/reservations_F'); // Navegar a la siguiente vista
+    };
+
     return (
-        <body>
-            <section class="Container-reservation">
-        <nav>
-                <img className="Iso_logo" src={Isologo} />{" "}
-                <div class="Reserv-cont">
-                    <div class="diamond-a">
-                    <div class="diamond-n">
-                        <div class="span-numb">
-
-                        <span class="span-col">2</span>
-
+        <section className="Container-reservation">
+            <nav>
+                <img className="Iso_logo" src={Isologo} alt="Isologo" />
+                <div className="Reserv-cont">
+                    <div className="diamond-a">
+                        <div className="diamond-n">
+                            <div className="span-numb">
+                                <span className="span-col">2</span>
+                            </div>
                         </div>
                     </div>
-                    </div>
-                    <div class="labels-cont">
-                        <label class="l1">Fecha Elegida</label>
-                        <label class="l2">Fecha Disponible</label>
-                        <label class="l3">No Disponible</label>
+                    <div className="labels-cont">
+                        <label className="l1">Fecha Elegida</label>
+                        <label className="l2">Fecha Disponible</label>
+                        <label className="l3">No Disponible</label>
                     </div>
                 </div>
-                </nav>
-            <div class="background-reservation-info">
-                <form class="form-info">
-
-                            <div class='container-form1'>
-                                    <label >Nombres</label>
-                                    <input type="text-large" name="text" id="text" />
-                                    <label >Apellidos</label>
-                                    <input type="text-large" name="text" id="text" />
-                                    <label >Fecha de Nacimiento</label>
-                                    <DatePicker
-                                        placeholderText="Introduce tu fecha"
-                                        selected={startDate}
-                                        onChange={(date) => setStartDate(date)}
-                                        peekNextMonth
-                                        withPortal
-                                        portalId="root-portal"
-                                        showMonthDropdown
-                                        showYearDropdown
-                                        timeFormat="HH:mm"
-                                        scale="es"
-                                        isClearable
-                                        form="external-form"
-                                        />
-                                    <label >¿Posee alguna Alergia?</label>
-                                    <div className="centering-checkbox">
-                                        <div className="container-checkbox">
-                                        <input type="checkbox" />
-                                            <label>Si</label>
-                                        </div>
-                                        <div className="container-checkbox">
-                                        <input type="checkbox" />
-                                            <label>No</label>
-                                        </div>
-                                    </div>
+            </nav>
+            <div className="background-reservation-info">
+                <form className="form-info" onSubmit={handleContinue}>
+                    <div className='container-form1'>
+                        <label>Nombres</label>
+                        <input type="text-large" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+                        <label>Apellidos</label>
+                        <input type="text-large" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+                        <label>Fecha de Nacimiento</label>
+                        <DatePicker
+                            placeholderText="Introduce tu fecha"
+                            selected={startDate}
+                            onChange={(date) => setStartDate(date)}
+                            peekNextMonth
+                            showMonthDropdown
+                            showYearDropdown
+                            dateFormat="dd/MM/yyyy"
+                            locale="es"
+                            isClearable
+                        />
+                        <label>¿Posee alguna Alergia?</label>
+                        <div className="centering-checkbox">
+                            <div className="container-checkbox">
+                                <input type="checkbox" checked={hasAllergy} onChange={() => setHasAllergy(!hasAllergy)} />
+                                <label>Si</label>
                             </div>
-                            <div class='container-form2'>
-                                    <label >Correo</label>
-                                    <input type="email" name="email" id="email" />
-                                    <label >Confirma tu Correo</label>
-                                    <input type="email" name="email" id="email" />
-                                    <label >Comentarios Adicionales</label>
-                                    <input type="text-large" name="text" id="text" />
-                                    <label >¿Que alergia posees?</label>
-                                    <input type="text-large" name="text" id="text" />
+                            <div className="container-checkbox">
+                                <input type="checkbox" checked={!hasAllergy} onChange={() => setHasAllergy(false)} />
+                                <label>No</label>
                             </div>
-                    <div class='container-form3'>
-                        <input type="checkbox"  />
-                        <label>Acepto los términos y condiciones</label>
-                            <img className="Iso_logo" src={log} />{" "}
-
-                    <form id ="external-form" className="form-input-button">
-                        <input class= "button-continue" type="submit"  value="Continuar" onClick={handleClickReservations}/>
-                    </form>
-
+                        </div>
                     </div>
+                    <div className='container-form2'>
+                        <label>Correo</label>
+                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <label>Confirma tu Correo</label>
+                        <input type="email" value={confirmEmail} onChange={(e) => setConfirmEmail(e.target.value)} />
+                        <label>Comentarios Adicionales</label>
+                        <input type="text-large" value={comentarios_adicionales} onChange={(e) => setcomentarios_adicionales(e.target.value)} />
+                        <label>¿Qué alergia posees?</label>
+                        <input type="text-large" value={allergy} onChange={(e) => setAllergy(e.target.value)} />
+                    </div>
+                    <div className='container-form3'>
+                        <input type="checkbox" required />
+                        <label>Acepto los términos y condiciones</label>
+                        <img className="Iso_logo" src={log} alt="Logo" />
+                    </div>
+                    <form id ="external-form" className="form-input-button-info">
+                        <input className="button-continue" type="submit" value="Continuar" 
+                        onClick={handleContinue}/>
+                        
+                    </form>
                 </form>
             </div>
+            <Outlet />
         </section>
-        <Outlet />
-        </body>
-        );
-    }
+    );
 }
 
 export default Reservaciones_Info;

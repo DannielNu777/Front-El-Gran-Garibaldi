@@ -5,9 +5,14 @@ import home_page1 from "../assets/img/home_page.png";
 import logo_p from "../logo.png";
 import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
+import log from "../assets/img/logo.png";
+import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-class Main extends Component {
-  render() {
+function Main (){
+    const navigate = useNavigate();
+    const handleClickR = () => navigate('/reservations')
+    
     return (
       <body>
         <link
@@ -46,9 +51,11 @@ class Main extends Component {
           </div>
         </header>
         <section class="Container">
-          <div class="main_img">
-            <img className="Main_Image" src={Main_I} />
-          </div>
+        <div className="events-img-main">
+                        <img className='img-events-main' src ={Main_I}/>
+                        <img className='Iso_logo_main' src ={log}/>
+                        <button class="button-reservs" onClick={handleClickR} >Reservar</button>
+                    </div>
           <div className="zone_c">
             <div className="zone_c1">
               <h2>Zona Campestre</h2>
@@ -171,6 +178,6 @@ class Main extends Component {
       </body>
     );
   }
-}
+
 
 export default Main;
