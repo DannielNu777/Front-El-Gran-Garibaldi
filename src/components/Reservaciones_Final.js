@@ -1,131 +1,241 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Isologo from "../../src/assets/img/ISOLOGO_GARIBALDI.png";
-import { Outlet } from "react-router-dom";
-import { Link } from "react-router-dom";
 import log from "../assets/img/logo.png";
-import { useState } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import { useReservationContext } from "./ReservationsContext.js"; // Asegúrate de que la ruta sea correcta
+import { useNavigate } from "react-router-dom";
 
-function Reservaciones_F(){
-    const [startDate, setStartDate] = useState(new Date());
-    {
-        return (
+function Reservaciones_F() {
+    const navigate = useNavigate();
+    const { 
+        reservationData, 
+        updateReservationData, 
+        validateReservationData,
+        getFormattedDataForAPI 
+    } = useReservationContext();
+
+    // Inicializar estados con valores del contexto
+    const [hay_nino, sethay_nino] = useState(reservationData.hay_nino);
+    const [selectedAges, setSelectedAges] = useState(reservationData.selectedAges);
+    const [motivoSeleccionado, setMotivoSeleccionado] = useState(reservationData.motivoReserva);
+    const [hasDecoration, setHasDecoration] = useState(reservationData.hasDecoration);
+
+
+    const ageRanges = [
+        { id: '2-6', label: '2 - 6 Años' },
+        { id: '4-8', label: '4 - 8 Años' },
+        { id: '8-12', label: '8 - 12 años' },
+        { id: '12-16', label: '12 - 16 Años' }
+    ];
+
+const motivosReserva = [
+            { id: 'cumpleanos-hombre', value: 'Cumpleaños Para Hombre' },
+            { id: 'cumpleanos-mujer', value: 'Cumpleaños Para Mujer' },
+            { id: 'cumpleanos-mixto', value: 'Cumpleaños Mixto' },
+            { id: 'grado', value: 'Grado' },
+            { id: 'aniversario', value: 'Aniversario' },
+            { id: 'despedida-soltero', value: 'Despedida de Soltero' },
+            { id: 'despedida-soltera', value: 'Despedida de Soltera' },
+            { id: 'despedida-viaje', value: 'Despedida de Viaje/Pais' },
+            { id: 'ninguno', value: 'Ninguno' }
+        ];
+
+const showAlert = () => {
+                    alert(`
+                    ¿Hay Algún niño?:${hay_nino}
+                    Rango edad niño: ${selectedAges}
+                    Motivo reserva: ${motivoSeleccionado}
+                    Decoracion: ${hasDecoration}
+                    `);
+                };
+
+    // Función para manejar el cambio de edad
+    const handleAgeChange = (ageId) => {
+        const newSelectedAges = selectedAges.includes(ageId)
+            ? selectedAges.filter(id => id !== ageId)
+            : [...selectedAges, ageId];
+        
+        setSelectedAges(newSelectedAges);
+        updateReservationData({ selectedAges: newSelectedAges });
+    };
+
+    // Función para manejar el cambio de motivo
+    const handleMotivoChange = (event) => {
+        setMotivoSeleccionado(event.target.value);
+        updateReservationData({ motivoReserva: event.target.value });
+    };
+
+    // Manejador para los checkboxes de niños y decoración
+    const handleNinoChange = (value) => {
+        sethay_nino(value);
+        updateReservationData({ hay_nino: value });
+    };
+
+    const handleDecorationChange = (value) => {
+        setHasDecoration(value);
+        updateReservationData({ hasDecoration: value });
+    };
+
+    // Envío del formulario
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        // Validar todos los datos antes de enviar
+        const { isValid, errors } = validateReservationData();
+        
+        if (!isValid) {
+            alert('Por favor, corrija los siguientes errores:\n' + errors.join('\n'));
+            return;
+        }
+
+        try {
+            // Obtener los datos formateados para la API
+            const formattedData = getFormattedDataForAPI();
+
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/reservations`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+                body: JSON.stringify(formattedData)
+            });
+
+            const data = await response.json();
+            
+            if (response.ok) {
+                console.log("Reserva realizada con éxito:", data);
+                navigate("/");
+            } else {
+                console.error("Error al realizar la reserva:", data);
+                alert('Error al realizar la reserva: ' + data.message);
+            }
+        } catch (error) {
+            console.error("Error en la solicitud:", error);
+            alert('Error al conectar con el servidor');
+        }
+    };
+
+    return (
         <body>
-            <section class="Container-reservation">
-            <nav>
-                <img className="Iso_logo" src={Isologo} />{" "}
-                <div class="Reserv-cont">
-                    <div class="diamond-a">
-                    <div class="diamond-n">
-                        <div class="span-numb">
-                        <span class="span-col">3</span>
+            <section className="Container-reservation">
+                <nav>
+                    <img className="Iso_logo" src={Isologo} />
+                    <div className="Reserv-cont">
+                        <div className="diamond-a">
+                            <div className="diamond-n">
+                                <div className="span-numb">
+                                    <span className="span-col">3</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="labels-cont">
+                            <label className="l1">Fecha Elegida</label>
+                            <label className="l2">Fecha Disponible</label>
+                            <label className="l3">No Disponible</label>
                         </div>
                     </div>
-                    </div>
-                    <div class="labels-cont">
-                    <label class="l1">Fecha Elegida</label>
-                    <label class="l2">Fecha Disponible</label>
-                    <label class="l3">No Disponible</label>
-                    </div>
-                </div>
                 </nav>
-            <div class="background-reservation-final">
-                <form class="form-reservations-final">
-                        <label for="selector" class="l3">
-                            ¿Dentro de tus acompañantes hay algún niño?
-                        </label>
+
+                <div className="background-reservation-final">
+                    <form className="form-reservations-final" onSubmit={handleSubmit}>
+                        <label className="l3">¿Dentro de tus acompañantes hay algún niño?</label>
                         <div className="centering-checkbox">
-                                        <div className="container-checkbox">
-                                        <input type="checkbox" />
-                                            <label>Si</label>
-                                        </div>
-                                        <div className="container-checkbox">
-                                        <input type="checkbox" />
-                                            <label>No</label>
-                                        </div>
+                            <div className="container-checkbox">
+                                    <input type="checkbox" checked={hay_nino} onChange={() => sethay_nino(!hay_nino)} />
+                                    <label>Si</label>
+                            </div>
+                            <div className="container-checkbox">
+                                    <input type="checkbox" checked={!hay_nino} onChange={() => sethay_nino(false)} />
+                                    <label>No</label>
+                            </div>
                         </div>
-                        <label for="selector" class="l3">
-                            Indicanos la media de edad(es)
-                        </label>
-                        <div className="centering-checkbox">
-                                        <div className="container-checkbox">
-                                        <input type="checkbox" />
-                                            <label>2 - 6 Años</label>
-                                        </div>
-                                        <div className="container-checkbox">
-                                        <input type="checkbox" />
-                                            <label>4 - 8 Años</label>
-                                        </div>
-                                        <div className="container-checkbox">
-                                        <input type="checkbox" />
-                                            <label>8 - 12 años</label>
-                                        </div>
-                                        <div className="container-checkbox">
-                                        <input type="checkbox" />
-                                            <label>12 - 16 Años</label>
-                                        </div>
-                        </div>
-                        <label className="information-count">
-                            Información a Tener en Cuenta 
-                        </label>
+
+                        <label className="l3">Indícanos la media de edad(es)</label>
+                        <label className="l3">Indícanos la media de edad(es)</label>
+                            <div className="centering-checkbox">
+                                {ageRanges.map((range) => (
+                                    <div key={range.id} className="container-checkbox">
+                                        <input
+                                            type="checkbox"
+                                            id={range.id}
+                                            checked={selectedAges.includes(range.id)}
+                                            onChange={() => handleAgeChange(range.id)}
+                                        />
+                                        <label htmlFor={range.id}>{range.label}</label>
+                                    </div>
+                                ))}
+                            </div>
+                            
+                            {/* Puedes ver las edades seleccionadas así: */}
+                            {selectedAges.length > 0 && (
+                                <div>
+                                    Edades seleccionadas: {selectedAges.join(', ')}
+                                </div>
+                            )}
+
+
+                        <label className="information-count">Información a Tener en Cuenta</label>
                         <div className="form-container-info-final">
-                            <div class="container-info-final-1">
-                                <p>La presente reservación no tiene nigún costo, el único costo que se tiene en cuenta es si desea adquirir 
-                                    la decoración de su preferencia. La reserva le asegura el ingreso al restaurante,
-                                    sin embargo su mesa la asignan los Hostess el día de su asistencia según el orden logístico en el que hayan
-                                    ingresado cada reserva de manera general.
+                            <div className="container-info-final-1">
+                                <p>
+                                    La presente reservación no tiene ningún costo, el único costo que se tiene en cuenta
+                                    es si desea adquirir la decoración de su preferencia. La reserva le asegura el
+                                    ingreso al restaurante, sin embargo su mesa la asignan los Hostess el día de su
+                                    asistencia según el orden logístico en el que hayan ingresado cada reserva de manera
+                                    general.
                                 </p>
                             </div>
-                            <div class="container-info-final-2">
-                                <label>
-                                    ¿Que Motivo es tu Reserva?
-                                </label>
-                                <select id="selector" name="selector">
-                                    <option value="opcion1">Cumpleaños Para Hombre</option>
-                                    <option value="opcion2">Cumpleaños Para Mujer</option>
-                                    <option value="opcion3">Cumpleaños Mixto</option>
-                                    <option value="opcion4">Grado</option>
-                                    <option value="opcion5">Aniversario</option>
-                                    <option value="opcion6">Despedida de Soltero</option>
-                                    <option value="opcion7">Despedida de Soltera</option>
-                                    <option value="opcion8">Despedida de Viaje/Pais</option>
-                                    <option value="opcion9">Ninguno</option>
-                                </select>
+                            <div className="container-info-final-2">
+                                        <label>¿Qué Motivo es tu Reserva?</label>
+                                        <select
+                                            name="motivoReserva"
+                                            value={motivoSeleccionado}
+                                            onChange={handleMotivoChange}
+                                        >
+                                            <option value="">Seleccione un motivo</option>
+                                            {motivosReserva.map((motivo) => (
+                                                <option 
+                                                    key={motivo.id} 
+                                                    value={motivo.value}
+                                                >
+                                                    {motivo.value}
+                                                </option>
+                                            ))}
+                                        </select>
+                                        
+                                        {/* Puedes ver el motivo seleccionado así: */}
+                                        {motivoSeleccionado && (
+                                            <div>
+                                                Motivo seleccionado: {motivoSeleccionado}
+                                            </div>
+                                        )}
+                                    </div>
+                        </div>
+
+                        <label className="l3">¿Deseas incluir la decoración para tu reserva y fecha especial?</label>
+                        <div className="container-centering-checkbox">
+                            <div className="centering-checkbox-footer">
+                                <div className="container-checkbox">
+                                        <input type="checkbox" checked={hasDecoration} onChange={() => setHasDecoration(!hasDecoration)} />
+                                        <label>Si</label>
+                                </div>
+                                <div className="container-checkbox">
+                                        <input type="checkbox" checked={!hasDecoration} onChange={() => setHasDecoration()} />
+                                        <label>No</label>
+                                </div>
                             </div>
                         </div>
-                        <div className="decoration-container">
-                            <p>Cada decoración a reserva consta de Mantelería propia del motivo de su reserva, 
-                            feston con globos y postre (Cremoso de arequipe) para el/la/los homenajead@(s) y la mejor atención y experiencia
-                            para toda tu familia.
-                            </p>
-                        </div>
-                        <label for="selector" class="l3">
-                            ¿Deseas incluir la decoración para tu reserva y fecha especial?
-                        </label>
-                    <div className="container-centering-checkbox">
-                        <div className="centering-checkbox-footer">
-                            <div className="container-checkbox">
-                                        <input type="checkbox" />
-                                            <label>Si</label>
-                                        </div>
-                                        <div className="container-checkbox">
-                                        <input type="checkbox" />
-                                            <label>No</label>
-                                        </div>
-                        </div>
-                        <img className="Iso_logo" src={log} />{" "}
+
+                        <img className="Iso_logo" src={log} />
                         <form id ="external-form" className="form-input-button">
-                            <input class= "button-continue" type="submit"  value="Reservar"/>
+                            <input className="button-continue" type="submit" value="Continuar" 
+                            onClick={showAlert}/>
                         </form>
-                    </div>
-                </form>
-            </div>
+                    </form>
+                </div>
             </section>
-            <Outlet />
         </body>
-        );
-    }
-    }
+    );
+}
 
 export default Reservaciones_F;

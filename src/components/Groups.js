@@ -124,4 +124,5 @@ const handleClickF = () => navigate('/frontera_popular')
             </body>
         );
     }
+
 export default Groups;
