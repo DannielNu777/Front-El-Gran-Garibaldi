@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 import log from "../assets/img/logo.png";
 import { useState } from "react";
+<<<<<<< HEAD
 import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import es from "date-fns/locale/es";
@@ -61,6 +62,51 @@ function Reservations() {
                 selectsRange
                 inline
                 showDisabledMonthNavigation
+=======
+import DatePicker, {registerLocale} from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import es from 'date-fns/locale/es';
+registerLocale("es", es);
+
+
+
+function Reservations() {
+  const [startDate, setStartDate] = useState(new Date());
+{
+    return (
+      <body>
+        <section class="Container-reservation">
+        <nav>
+              <img className="Iso_logo" src={Isologo} />{" "}
+              <div class="Reserv-cont">
+                <div class="diamond-a">
+                  <div class="diamond-n">
+                    <div class="span-numb">
+                      <span class="span-col">1</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="labels-cont">
+                  <label class="l1">Fecha Elegida</label>
+                  <label class="l2">Fecha Disponible</label>
+                  <label class="l3">No Disponible</label>
+                </div>
+              </div>
+            </nav>
+          <div class="background-reservation">
+            <form class="form">
+              <DatePicker className="calendar"
+              placeholderText="Reserva tu Fecha Especial"
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
+              peekNextMonth
+              withPortal
+              portalId="root-portal"
+              showMonthDropdown
+              showYearDropdown
+              dropdownMode="select"
+              locale="es"
+>>>>>>> 5f7c0841ead3ddabd8c332ee3b88c6ea636c126e
               />
               <label for="selector" class="l3">
                 Selecciona la Cantidad de personas:
@@ -74,6 +120,7 @@ function Reservations() {
               <label for="selector" class="l3">
                 Selecciona el Horario de tu Preferencia:
               </label>
+<<<<<<< HEAD
               <DatePicker
                 selected={selected}
                 onChange={(date) => setSelected(date)}
@@ -92,6 +139,11 @@ function Reservations() {
                   onClick={handleClickReservations}
                 />
               </form>
+=======
+              <input type="text-1" name="horario" id="horario" />
+              <img className="Iso_logo" src={log} />{" "}
+              <h1 class="l4">Continuar</h1>
+>>>>>>> 5f7c0841ead3ddabd8c332ee3b88c6ea636c126e
             </form>
           </div>
         </section>
