@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Isologo from "../../src/assets/img/ISOLOGO_GARIBALDI.png";
+
 import { Outlet, Link, Navigate } from "react-router-dom";
 
 class SingUp extends Component {
@@ -69,6 +70,7 @@ class SingUp extends Component {
 
     return (
       <div>
+
         <link
           href="https://maxcdn.bootstrapcdn.com/font-..."
           rel="stylesheet"
@@ -162,12 +164,14 @@ class SingUp extends Component {
               {mensaje && <p>{mensaje}</p>}
               {error && <p style={{ color: "red" }}>{error}</p>}
               <span className="span">
+
                 ¿Ya tienes una cuenta? <Link to="/login">Login</Link>
               </span>
             </form>
           </div>
         </section>
       </div>
+
     );
   }
 }

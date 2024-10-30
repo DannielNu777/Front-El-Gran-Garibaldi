@@ -5,6 +5,7 @@ import Main from "./components/Main.js";
 import Body from "./components/Body.js";
 import Styles from "./components/Styles.css";
 import StylesL from "./components/StylesL.css";
+import Front_Back_Styles from "./components/Front-Back-Styles.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Shows from "./components/Shows.js";
 import Groups from "./components/Groups.js";
@@ -16,6 +17,14 @@ import FronteraPopular from "./components/FronteraPopular.js";
 import Login from "./components/Login.js";
 import SingUp from "./components/SingUp.js";
 import Reservations from "./components/Reservations.jsx";
+
+import Reservaciones_Info from './components/Reservaciones_Info.js';
+import Reservaciones_F from './components/Reservaciones_Final.js';
+import { useState } from "react";
+import Order_One from "./components/front-waiter1.js";
+import New_Order from './components/new-order.js';
+import Reservations from "./components/Reservations.js";
+
 import AdminMain from "./components/AdminMain.js";
 import AdminUsers from "./components/AdminUsers.jsx";
 import AdminReser from "./components/AdminReser.js";
@@ -24,6 +33,7 @@ import AdminMulti from "./components/AdminMulti.js";
 import Reservaciones_Info from './components/Reservaciones_Info.js';
 import Reservaciones_F from './components/Reservaciones_Final.js';
 import { useState } from "react";
+
 
 
 function App() {
@@ -41,6 +51,10 @@ function App() {
       <Route path="/login" element={<Login />}></Route>
       <Route path="/sing-up" element={<SingUp />}></Route>
       <Route path="/reservations" element={<Reservations />}></Route>
+      <Route path="/reservations_info" element={<Reservaciones_Info />}></Route>
+      <Route path="/reservations_F" element={<Reservaciones_F />}></Route>
+      <Route path="/order_one" element={<Order_One />}></Route>
+      <Route path="/new_order" element={<New_Order />}></Route>
       <Route path="/admin-main" element={<AdminMain />}></Route>
       <Route path="/admin-users" element={<AdminUsers />}></Route>
       <Route path="/admin-reservation" element={<AdminReser />}></Route>
@@ -48,7 +62,6 @@ function App() {
       <Route path="/admin-multimedia" element={<AdminMulti />}></Route>
       <Route path="/reservations_info" element={<Reservaciones_Info />}></Route>
       <Route path="/reservations_F" element={<Reservaciones_F />}></Route>
-
     </Routes>
   );
 }
