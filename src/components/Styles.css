@@ -31,9 +31,76 @@ a:hover {
   max-width: 150px;
   padding-bottom: 15px;
 }
+.Iso_logo_main{
+  position: absolute;
+  width: 150px;
+  margin-top: -160px;
+  transform: translate(-560%, 250%);
+}
 .Main_Image {
   max-width: 100%;
+  position: relative;
+  filter: brightness(70%);
 }
+.button-reservs{
+  min-width: 120px;
+  font-size: xx-large;
+  position: absolute;
+  font-family: fantasy;
+  cursor: pointer;
+
+  padding: 12px 17px;
+  border: 0;
+  border-radius: 7px;
+
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  background: radial-gradient(
+    ellipse at bottom,
+    rgb(255, 255, 255) 0%,
+    rgb(255, 255, 255) 45%
+  );
+
+  color: rgb(177, 125, 12);
+
+  transition: all 1s cubic-bezier(0.15, 0.83, 0.66, 1);
+  transform: translate(-550%, 550%); 
+}
+.button-reservs::before {
+  content: "";
+  width: 70%;
+  height: 1px;
+
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  
+  opacity: 0.2;
+  transform: translate(-550%, 550%); 
+  transition: all 1s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.button-reservs:hover {
+  color: rgb(212, 150, 17);
+  transform: scale(1.1) translateY(-3px);
+  transform: translate(-550%, 550%); 
+}
+.button-reservs:hover::before {
+  opacity: 1;
+  transform: translate(-550%, 550%); 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .zone_c {
   display: flex;
@@ -543,6 +610,8 @@ EVENTS ZONE
 .intern-column-event{
   display: flex;
   justify-content: center;
+  text-align: center;
+  padding-bottom: 10%;
 }
 /*
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -603,6 +672,10 @@ EVENTS ZONE
 .column-groups-container{
   width: 400px;
   background-color: #ffffff;
+  padding-left: 30px;
+  justify-content: center;
+  text-align: center;
+  padding: 5%;
 }
 .column-groups-space{
   width: 60px;

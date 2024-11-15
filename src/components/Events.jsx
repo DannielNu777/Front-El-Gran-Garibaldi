@@ -47,7 +47,9 @@ class Events extends Component{
                         <img className='img-events-main' src ={MainEvent}/>
                         <img className='img-private-events' src ={PrivateE}/>
                         <em class='text-events'>Deja en nuestras manos tus fechas especiales</em>
-                        <button class="button-events">COTIZA TU EVENTO</button>
+                        <a href="https://api.whatsapp.com/message/GJGBGEYF53W7B1?autoload=1&app_absent=0">
+                            <button class="button-events">COTIZA TU EVENTO</button>
+                        </a>
                     </div>
 
                     <div className="events-container">
@@ -68,31 +70,28 @@ class Events extends Component{
                             <img className='images-events' src ={ImgE3}/>
                         </div>
                         <div className="characteristics">
-                            <div className="column-events-container">
+                            <div className="column-groups-container">
                                 <div className="intern-column-event">
                                     <img className="img_G" src = {ImgE4}/>
                                 </div>
-                                <p>Going for a night out on town? Want to grab something to eat but cannot decide? 
-                                    The variety of restaurants available to you in the core of downtown is endless 
-                                    guaranteed to impress.</p>
+                                <p>Contamos con un protocolo ejemplar para atender a tus eventos de una manera elegante 
+                                    especial, tal cual cómo tú te lo mereces.</p>
                             </div>
 
                             <div className="column-groups-container">
                                 <div className="intern-column-event">
                                     <img className="img_NG" src = {ImgE5}/>
                                 </div>
-                                <p>Going for a night out on town? Want to grab something to eat but cannot decide? 
-                                    The variety of restaurants available to you in the core of downtown is endless 
-                                    guaranteed to impress.</p>
+                                <p>Contamos con maravillosas decoraciones dignas para tu ocasión especial, perfectas
+                                    para tus familiares y más allegados, Quince años, Bautizo, Despedidas y un largo etcétera.
+                                    Ven y disfruta con Nosotros.</p>
                             </div>
 
                             <div className="column-groups-container">
                                 <div className="intern-column-event">
                                     <img className="img_F" src = {ImgE6}/>
                                 </div>
-                                <p>Going for a night out on town? Want to grab something to eat but cannot decide? 
-                                    The variety of restaurants available to you in the core of downtown is endless 
-                                    guaranteed to impress.</p>
+                                <p>El lugar ideal para vivir el mejor día de tu vida ✨</p>
                             </div>
                         </div>
                     </div>
@@ -122,10 +121,29 @@ class Events extends Component{
                     </div>
                     <div className= 'social'>
                         <div className='zone_social'>
-                            <button class="button-name" role="Whatsapp">Whatsapp</button>
-                            <button class="button-name" role="Instagram">Instagram</button>
-                            <button class="button-name" role="TikTok">TikTok</button>
-                            <button class="button-name" role="Facebook">Facebook</button>
+                        <a href="https://api.whatsapp.com/message/GJGBGEYF53W7B1?autoload=1&app_absent=0">
+                            <button class="button-name" role="button">
+                                WhatsApp
+                            </button>
+                        </a>
+
+                    <a href="https://www.instagram.com/elgrangaribaldi?igsh=MWhmYmxsOW5odHNteg==">
+                    <button class="button-name" role="Instagram">
+                        Instagram
+                    </button>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@elgrangaribaldi?_t=8rOwZr1Ov7o&_r=1">
+                    <button class="button-name" role="TikTok">
+                        TikTok
+                    </button>
+                    </a>
+
+                    <a href="https://www.facebook.com/ElGranGaribaldi">
+                    <button class="button-name" role="Facebook">
+                        Facebook
+                    </button>
+                    </a>
                         </div>
                     </div>
             </footer>

@@ -45,7 +45,7 @@ const Login = () => {
             navigate("/admin-main");
             break;
           case "default":
-            navigate("/events");
+            navigate("/reservations");
             break;
           default:
             navigate("/");

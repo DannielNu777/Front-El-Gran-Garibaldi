@@ -5,9 +5,13 @@ import home_page1 from "../assets/img/home_page.png";
 import logo_p from "../logo.png";
 import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
+import log from "../assets/img/logo.png";
+import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-class Main extends Component {
-  render() {
+function Main (){
+    const navigate = useNavigate();
+    const handleClickR = () => navigate('/reservations')
     return (
       <body>
         <link
@@ -46,9 +50,11 @@ class Main extends Component {
           </div>
         </header>
         <section class="Container">
-          <div class="main_img">
-            <img className="Main_Image" src={Main_I} />
-          </div>
+        <div className="events-img-main">
+                        <img className='img-events-main' src ={Main_I}/>
+                        <img className='Iso_logo_main' src ={log}/>
+                        <button class="button-reservs" onClick={handleClickR} >Reservar</button>
+                    </div>
           <div className="zone_c">
             <div className="zone_c1">
               <h2>Zona Campestre</h2>
@@ -150,18 +156,29 @@ class Main extends Component {
 
             <div className="social">
               <div className="zone_social">
-                <button class="button-name" role="Whatsapp">
-                  Whatsapp
-                </button>
-                <button class="button-name" role="Instagram">
-                  Instagram
-                </button>
-                <button class="button-name" role="TikTok">
-                  TikTok
-                </button>
-                <button class="button-name" role="Facebook">
-                  Facebook
-                </button>
+              <a href="https://api.whatsapp.com/message/GJGBGEYF53W7B1?autoload=1&app_absent=0">
+                    <button class="button-name" role="button">
+                        WhatsApp
+                    </button>
+                </a>
+
+                <a href="https://www.instagram.com/elgrangaribaldi?igsh=MWhmYmxsOW5odHNteg==">
+                  <button class="button-name" role="Instagram">
+                    Instagram
+                  </button>
+                </a>
+
+                <a href="https://www.tiktok.com/@elgrangaribaldi?_t=8rOwZr1Ov7o&_r=1">
+                  <button class="button-name" role="TikTok">
+                    TikTok
+                  </button>
+                </a>
+
+                <a href="https://www.facebook.com/ElGranGaribaldi">
+                  <button class="button-name" role="Facebook">
+                    Facebook
+                  </button>
+                </a>
               </div>
             </div>
           </div>
@@ -171,6 +188,6 @@ class Main extends Component {
       </body>
     );
   }
-}
+
 
 export default Main;

@@ -154,17 +154,19 @@
     filter: brightness(80%);
 }
 .background-reservation{
-    margin-top: 0%;
+    flex-direction: column;
+    display: flex;
     margin-bottom: 10%;
-    margin-right: 30%;
-    margin-left: 30%;
+    margin-right: 10%;
+    margin-left: 24%;
     background-color: var(--bg-dark);
-    padding: 5%;
-    padding-left: 7%;
-    padding-right: 7%;
-    border-radius: 2.5em;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 20px;
+    border-radius: 4.5em;
     align-items: center;
     justify-content: center;
+    width: 60%;
 }
 .Navbar-1 {
     position: relative;
@@ -174,7 +176,7 @@
     background-size: cover;
     height: 30em;
     filter: brightness(80%);
-
+}
 .form img{
     position: absolute;
     margin-top: 29em;
@@ -314,13 +316,18 @@ span {
 
 }
 
+.l5 {
+    color: var(--bg-dark);
+    border-radius: 20%;
+    background-color: var(--clr);
+    padding: 30px;
+}
 /*
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     Reservations_Info => Section
 */
 .background-reservation-info{
     display: flex;
-    align-self: center;
     justify-self: center;
     align-items: center;
     justify-content: center;
@@ -328,8 +335,9 @@ span {
     width: 60%;
     height: 100vh;
     margin-top: 7%;
-    margin-left: 20%;
-    border-radius: 15%;
+    margin-left: 7%;
+    border-radius: 2.5rem;
+    margin-right: 7%
     
 }
 .container-grid-form{
@@ -403,8 +411,24 @@ span {
     color: #f9af3a;
     font-size: 40px;
     border: none;
-    margin-top: 10%;
+    margin-top: 20%;
+    margin-bottom: 50%;
+    justify-content: center;
 }
+
+.form-input-button-info input[type="submit"]{
+    width: 400px;
+    background-color:#000000;
+    color: #f9af3a;
+    font-size: 40px;
+    border: none;
+    margin-bottom: 0%;
+    margin-left: 50%;
+    justify-content: center;
+}
+
+
+
 .container-form2 input[type="email"],
 .container-form2 input[type="text-large"]{
     border-radius: 0.5rem;
@@ -461,6 +485,28 @@ Reservations Final
     column-gap: 50px;
     width: 100%;
 }
+
+
+.form-input-button-final input[type="submit"]{
+    width: 400px;
+    background-color:#000000;
+    color: #f9af3a;
+    font-size: 40px;
+    border: none;
+
+    margin-top: 50%;
+    justify-content: center;
+}
+.form-input-button-final img{
+    position: absolute;
+}
+.Iso_logo-final {
+    max-width: 150px;
+    padding-bottom: 15px;
+    position: absolute;
+    transform: translate(20%, 30%);
+}
+
 .form-reservations-final{
     display: flex;
     align-items: center;
@@ -662,7 +708,6 @@ Reservations Final
     align-items: center;
     justify-content: center;
 }
-<<<<<<< HEAD
 .background-log-order2 {
     text-align: center;
     margin-top: 15%;
@@ -701,8 +746,6 @@ Reservations Final
 
 
 
-=======
->>>>>>> 6ce63ae8db9d63d1e924e1a37257b974385004d2
 
 /*Admin-Main*/
 
@@ -1031,8 +1074,193 @@ Reservations Final
     cursor: pointer;
 }
 
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--bg-dark);
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--bg-light);
+}
+
+.modal-body {
+    margin-top: 20px;
+}
+
+.modal-info p {
+    margin: 10px 0;
+    color: var(--bg-light);
+    justify-self: center;
+}
+
+.modal-footer {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.reports-button {
+    padding: 8px 16px;
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: var(--clr);
+    color: var(--bg-dark);
+    border-radius: 7em;
+}
+
+.select-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.select-month,
+.select-year {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.generate-report-btn {
+    padding: 8px 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+.generate-report-btn:hover {
+    background-color: #0056b3;
+}
+
+/*Admin-Multi*/
+
+.U1 {
+    padding: 5%;
+    margin: 0px;
+}
+
+.multi-event {
+    position: relative;
+    background-color: var(--bg-dark);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 0;
+    row-gap: 1em;
+    justify-content: space-evenly;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-sizing: content-box;
+}
+
+.multi-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.btn-multi {
+    width: 40%;
+    align-self: center;
+    background-color: var(--clr);
+    color: var(--bg-dark);
+    margin: 3%;
+    font-size: large;
+}
+
+.multi-add {
+    width: 45%;
+    padding: 2%;
+}
+
+.multi-txt {
+    width: 45%;
+    padding: 2%;
+}
+
+.multi-img {
+    width: 70%;
+    height: auto;
+}
+
+.multi-input {
+    width: 70%;
+    height: auto;
+}
+
+.gallery-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 3rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.gallery-item {
+    cursor: pointer;
+    transition: transform 0.2s;
+    position: relative;
+    width: 35%;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    object-fit: contain;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: scale-down;
+    border-radius: 8px;
+}
+
+.selected-image-container {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.selected-image {
+    max-width: 50%;
+    max-height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
 /*
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     Reservations_Info => Section
 */
 .background-reservation-info{
@@ -1047,13 +1275,8 @@ Reservations Final
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
-<<<<<<< HEAD
 .footer-reservations{
     background-color: #4e4a4a;
     height: 200px;
     width: 100%;
 }
-=======
-
-
->>>>>>> 6ce63ae8db9d63d1e924e1a37257b974385004d2

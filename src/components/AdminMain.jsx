@@ -24,12 +24,6 @@ class AdminMain extends Component {
   render() {
     return (
       <body>
-        <link
-          href="https://maxcdn.bootstrapcdn.com/font-..."
-          rel="stylesheet"
-          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-          crossorigin="anonymous"
-        ></link>
         <header class="header">
           <div className="Navbar-1">
             <nav>
@@ -43,16 +37,16 @@ class AdminMain extends Component {
           <div class="background-log">
             <form class="form">
               <Link to="/admin-users">
-                <button class="l4">Usuarios</button>
+                <button class="l5">Usuarios</button>
               </Link>
               <Link to="/admin-multimedia">
-                <button class="l4">Multimedia</button>
+                <button class="l5">Multimedia</button>
               </Link>
               <Link to="/admin-coment">
-                <button class="l4">Comentarios</button>
+                <button class="l5">Comentarios</button>
               </Link>
               <Link to="/admin-reservation">
-                <button class="l4">Reservas</button>
+                <button class="l5">Reservas</button>
               </Link>
             </form>
           </div>
