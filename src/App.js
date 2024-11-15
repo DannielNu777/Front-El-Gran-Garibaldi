@@ -18,6 +18,7 @@ import Login from "./components/Login.jsx";
 import SingUp from "./components/SingUp.jsx";
 import Reservations from "./components/Reservations.jsx";
 
+<<<<<<< HEAD
 import Reservaciones_Info from './components/Reservaciones_Info.jsx';
 import Reservaciones_F from './components/Reservaciones_Final.jsx';
 import Order_One from "./components/front-waiter1.jsx";
@@ -30,6 +31,22 @@ import AdminUsers from "./components/AdminUsers.jsx";
 import AdminReser from "./components/AdminReser.jsx";
 import AdminMulti from "./components/AdminMulti.jsx";
 import { ReservationProvider } from './components/ReservationsContext.jsx';
+=======
+import Reservaciones_Info from './components/Reservaciones_Info.js';
+import Reservaciones_F from './components/Reservaciones_Final.js';
+import Order_One from "./components/front-waiter1.js";
+import New_Order from './components/new-order.js';
+
+import Reservations from "./components/Reservations.js";
+
+
+import AdminMain from "./components/AdminMain.js";
+import AdminUsers from "./components/AdminUsers.jsx";
+import AdminReser from "./components/AdminReser.js";
+import AdminComent from "./components/AdminComent.js";
+import AdminMulti from "./components/AdminMulti.js";
+import { ReservationProvider } from './components/ReservationsContext.js';
+>>>>>>> 44ccb33e8fd9990f7a5d3827a1edc6a575f1de0f
 import ReactDOM from 'react-dom/client';
 import { useState } from "react";
 

@@ -12,6 +12,10 @@ import { useNavigate } from "react-router-dom";
 function Main (){
     const navigate = useNavigate();
     const handleClickR = () => navigate('/reservations')
+<<<<<<< HEAD:src/components/Main.jsx
+=======
+    
+>>>>>>> 44ccb33e8fd9990f7a5d3827a1edc6a575f1de0f:src/components/Main.js
     return (
       <body>
         <link
