@@ -7,18 +7,14 @@ import { useState } from "react";
 const apiURL = process.env.REACT_APP_API_URL;
 
 const Login = () => {
-
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
 
-  // Manejar el cambio de los inputs
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
 
-  // Manejar el envío del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -33,11 +29,10 @@ const Login = () => {
           body: JSON.stringify({ email, contrasena: password }),
         }
       );
-      
+
       const data = await response.json();
 
       if (response.ok) {
-        console.log(data);
         localStorage.setItem("token", data.token);
 
         switch (data.rol) {
@@ -45,7 +40,19 @@ const Login = () => {
             navigate("/admin-main");
             break;
           case "default":
-            navigate("/events");
+            navigate("/reservations");
+            break;
+          case "Caja":
+            navigate("/cash");
+            break;
+          case "Cocina":
+            navigate("/kitchen-order");
+            break;
+          case "Bar":
+            navigate("/bar");
+            break;
+          case "Mesero":
+            navigate("/order-one");
             break;
           default:
             navigate("/");
@@ -56,8 +63,6 @@ const Login = () => {
     } catch (error) {
       console.error("Error en la conexión con la API", error);
       alert("Error de conexión con el servidor");
-
-
     }
   };
 
@@ -66,10 +71,9 @@ const Login = () => {
       <header className="header">
         <div className="Navbar">
           <nav>
-            <Link to="/login">
+            <Link to="/">
               <img className="Iso_logo" src={Isologo} alt="Isologo" />
             </Link>
-            <Link to="/">Inicio</Link>
           </nav>
         </div>
       </header>
@@ -103,9 +107,6 @@ const Login = () => {
                 required
               />
             </span>
-            <span className="span">
-              <a href="#">¿Olvidó su contraseña?</a>
-            </span>
 
             <button className="submit" type="submit">
               Log in
@@ -122,4 +123,3 @@ const Login = () => {
 };
 
 export default Login;
-

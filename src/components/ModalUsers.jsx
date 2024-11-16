@@ -32,8 +32,6 @@ const ModalUsers = ({ stateM, changeState, updateUsersList }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Formulario enviado");
-
     const telefonoPattern = /^\d{10}$/;
     if (!telefonoPattern.test(formData.telefono)) {
       setError("El teléfono debe tener 10 dígitos.");
@@ -61,7 +59,9 @@ const ModalUsers = ({ stateM, changeState, updateUsersList }) => {
         setMensaje(data.message);
         setError("");
         updateUsersList();
-        resetForm(); // Reseteamos el formulario aquí
+        resetForm();
+        changeState(false);
+        alert("Se ha registrado un nuevo usuario");
       } else {
         setError(data.error || "Error al registrar usuario.");
       }
@@ -80,7 +80,7 @@ const ModalUsers = ({ stateM, changeState, updateUsersList }) => {
           className="close"
           onClick={() => {
             changeState(false);
-            resetForm(); // Reseteamos el formulario al cerrar el modal
+            resetForm();
           }}
           src={close}
           alt="Cerrar"
