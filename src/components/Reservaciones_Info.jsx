@@ -5,7 +5,7 @@ import log from "../assets/img/logo.png";
 import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import es from 'date-fns/locale/es';
-import { useReservationContext } from "./ReservationsContext"; // Asegúrate de que la ruta es correcta
+import { useReservationContext } from "./ReservationsContext.jsx"; // Asegúrate de que la ruta es correcta
 
 registerLocale("es", es);
 
@@ -28,7 +28,7 @@ const Reservaciones_Info = () => {
             updateReservationData({
             comentarios_adicionales,
             });
-        navigate('/reservations_F'); // Navegar a la siguiente vista
+        navigate('/reservations-F'); // Navegar a la siguiente vista
     };
 
     return (

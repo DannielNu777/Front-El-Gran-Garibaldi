@@ -5,7 +5,6 @@ import { useReservationContext } from "./ReservationsContext.jsx";
 import "react-datepicker/dist/react-datepicker.css";
 import es from "date-fns/locale/es";
 import { format, getDay } from "date-fns";
-import log from "../assets/img/logo.png";
 import addMonths from "date-fns/addMonths";
 import Isologo from "../../src/assets/img/ISOLOGO_GARIBALDI.png";
 
@@ -58,10 +57,9 @@ const Reservations = () => {
       `);
   
       // Navegar a la siguiente vista
-      navigate('/reservations_Info');
+      navigate('/reservations-Info');
     }
   };
-
 
   const filterTime = (time) => {
     const date = new Date(time);
@@ -180,7 +178,6 @@ const Reservations = () => {
             <option value={58}>58 personas</option>
             <option value={59}>59 personas</option>
             <option value={60}>60 personas</option>
-
           </select>
           <label htmlFor="selector" className="l3">
             Selecciona el Horario de tu Preferencia:
@@ -209,7 +206,6 @@ const Reservations = () => {
             </div>
           )}
         </form>
-
         <form id="external-form" className="form-input-button" onSubmit={handleSubmit}>
           <input
             className="button-continue"
@@ -218,7 +214,6 @@ const Reservations = () => {
           />
         </form>
       </div>  
-
     </section>
   );
 }
