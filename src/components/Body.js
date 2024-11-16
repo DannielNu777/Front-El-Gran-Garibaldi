@@ -124,18 +124,29 @@ class Body extends Component {
           </div>
           <div className="social">
             <div className="zone_social">
-              <button class="button-name" role="Whatsapp">
-                Whatsapp
-              </button>
-              <button class="button-name" role="Instagram">
-                Instagram
-              </button>
-              <button class="button-name" role="TikTok">
-                TikTok
-              </button>
-              <button class="button-name" role="Facebook">
-                Facebook
-              </button>
+              <a href="https://api.whatsapp.com/message/GJGBGEYF53W7B1?autoload=1&app_absent=0">
+                    <button class="button-name" role="button">
+                        WhatsApp
+                    </button>
+                </a>
+
+                <a href="https://www.instagram.com/elgrangaribaldi?igsh=MWhmYmxsOW5odHNteg==">
+                  <button class="button-name" role="Instagram">
+                    Instagram
+                  </button>
+                </a>
+
+                <a href="https://www.tiktok.com/@elgrangaribaldi?_t=8rOwZr1Ov7o&_r=1">
+                  <button class="button-name" role="TikTok">
+                    TikTok
+                  </button>
+                </a>
+
+                <a href="https://www.facebook.com/ElGranGaribaldi">
+                  <button class="button-name" role="Facebook">
+                    Facebook
+                  </button>
+                </a>
             </div>
           </div>
         </section>
