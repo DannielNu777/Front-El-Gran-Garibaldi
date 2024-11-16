@@ -50,12 +50,6 @@ const Reservations = () => {
         horario_reserva: mysqlDateTime // Aquí ya está en formato MySQL
       });
   
-      // Mostrar alerta (mantenemos el formato amigable para el usuario)
-      alert(`
-        Fecha y Hora Seleccionada: ${format(horario_reserva, "yyyy MMMM, d h:mm aa")}
-        Número de Personas: ${cantidad_personas}
-      `);
-  
       // Navegar a la siguiente vista
       navigate('/reservations-Info');
     }
