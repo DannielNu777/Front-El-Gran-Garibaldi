@@ -24,22 +24,6 @@ const Reservaciones_Info = () => {
 
         const handleContinue = (e) => {
             e.preventDefault();
-<<<<<<< HEAD:src/components/Reservaciones_Info.jsx
-=======
-        
-            // Display the data in an alert
-            alert(`
-            Start Date: ${startDate.toLocaleDateString()}
-            First Name: ${firstName}
-            Last Name: ${lastName}
-            Email: ${email}
-            Confirm Email: ${confirmEmail}
-            comentarios_adicionales: ${comentarios_adicionales}
-            Allergy: ${allergy}
-            Has Allergy: ${hasAllergy}
-            `);
-        
->>>>>>> 44ccb33e8fd9990f7a5d3827a1edc6a575f1de0f:src/components/Reservaciones_Info.js
             // Update reservation data (assuming this is your original intent)
             updateReservationData({
             comentarios_adicionales,
@@ -103,15 +87,11 @@ const Reservaciones_Info = () => {
                         <label>Confirma tu Correo</label>
                         <input type="email" value={confirmEmail} onChange={(e) => setConfirmEmail(e.target.value)} />
                         <label>Comentarios Adicionales</label>
-<<<<<<< HEAD:src/components/Reservaciones_Info.jsx
                         <input 
                             type="text-large" 
                             value={comentarios_adicionales} 
                             onChange={(e) => setcomentarios_adicionales(e.target.value)} 
                             required />
-=======
-                        <input type="text-large" value={comentarios_adicionales} onChange={(e) => setcomentarios_adicionales(e.target.value)} />
->>>>>>> 44ccb33e8fd9990f7a5d3827a1edc6a575f1de0f:src/components/Reservaciones_Info.js
                         <label>¿Qué alergia posees?</label>
                         <input type="text-large" value={allergy} onChange={(e) => setAllergy(e.target.value)} />
                     </div>
