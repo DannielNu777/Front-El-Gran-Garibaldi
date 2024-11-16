@@ -62,15 +62,6 @@ const Reservaciones_F = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        alert(`Datos de la Reservación:
-            - Cantidad de Personas: ${reservationData.cantidad_personas || 'No especificado'}
-            - Horario de Reserva: ${reservationData.horario_reserva || 'No especificado'}
-            - Comentarios Adicionales: ${reservationData.comentarios_adicionales || 'No especificado'}
-            - ¿Hay Niños?: ${reservationData.hay_nino ? 'Sí' : 'No'}
-            - Motivo de Reserva: ${reservationData.motivo_reserva || 'No especificado'}
-            - Rango de Edad de Niños: ${reservationData.rango_edad_nino || 'No especificado'}
-            - Incluye Decoración: ${hasDecoration ? 'Sí' : 'No'}`); 
-
         const { isValid, errors } = validateReservationData();
         
         if (!isValid) {
@@ -89,11 +80,15 @@ const Reservaciones_F = () => {
                 },
                 body: JSON.stringify(formattedData)
             });
-
+            
             const data = await response.json();
+            
+            
             
             if (response.ok) {
                 console.log("Reserva realizada con éxito:", data);
+                aler(`Reserva realizada con éxito`);
+
                 navigate("/");
             } else {
                 throw new Error(data.message || 'Error al realizar la reserva');
