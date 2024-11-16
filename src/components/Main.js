@@ -30,6 +30,7 @@ const Main = () => {
   const navigate = useNavigate();
   const handleClickR = () => navigate("/login");
 
+
   const [slider1, setSlider1] = useState([]);
   const [slider2, setSlider2] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);

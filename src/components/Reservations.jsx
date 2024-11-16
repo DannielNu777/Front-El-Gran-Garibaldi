@@ -62,6 +62,7 @@ const Reservations = () => {
     }
   };
 
+
   const filterTime = (time) => {
     const date = new Date(time);
     const day = getDay(selectedDate || new Date());
@@ -179,6 +180,7 @@ const Reservations = () => {
             <option value={58}>58 personas</option>
             <option value={59}>59 personas</option>
             <option value={60}>60 personas</option>
+
           </select>
           <label htmlFor="selector" className="l3">
             Selecciona el Horario de tu Preferencia:
@@ -207,6 +209,7 @@ const Reservations = () => {
             </div>
           )}
         </form>
+
         <form id="external-form" className="form-input-button" onSubmit={handleSubmit}>
           <input
             className="button-continue"
@@ -215,6 +218,7 @@ const Reservations = () => {
           />
         </form>
       </div>  
+
     </section>
   );
 }
