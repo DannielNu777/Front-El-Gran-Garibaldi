@@ -1,10 +1,11 @@
-FROM node:16
+# Copia primero los archivos necesarios
+COPY package.json package-lock.json /app/
 
-WORKDIR /app
+# Instala las dependencias
+RUN npm ci
 
-COPY package*.json ./
-RUN npm install
+# Copia el resto del código
+COPY . /app
 
-COPY . .
-
+# Construye la aplicación
 RUN npm run build
