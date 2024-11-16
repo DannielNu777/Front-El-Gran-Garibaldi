@@ -19,7 +19,9 @@ function FronteraPopular() {
                         <img className='imgMain-groups' src={FronteraMain} />
                         <img className='imgMain-groups-I' src={LOGOFRONTERA}/>
                         <a className="home-groups">FRONTERA POPULAR</a>
-                        <button className="button-banda">COTIZA TU SERENATA</button>
+                         <a href="https://api.whatsapp.com/message/5N3247B74BANF1?autoload=1&app_absent=0">
+                                    <button className="button-banda">COTIZA TU SERENATA</button>
+                        </a>
                     </div>
                 </header>
                 <section>
