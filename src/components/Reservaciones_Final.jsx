@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Isologo from "../../src/assets/img/ISOLOGO_GARIBALDI.png";
 import log from "../assets/img/logo.png";
-import { useReservationContext } from "./ReservationsContext.jsx";
+import { useReservationContext } from "./ReservationsContext";
 import { useNavigate } from "react-router-dom";
 
 const Reservaciones_F = () => {
