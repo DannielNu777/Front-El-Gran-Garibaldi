@@ -22,7 +22,9 @@ function MariachiBanda() {
                         <img className='imgMain-groups' src={MariachiObanda}/>
                         <img className='imgMain-groups-I' src={MariachiObandaI}/>
                         <a className="home-groups">¿BANDA O MARIACHI?</a>
-                        <button className="button-mariachi-banda">COTIZA TU SERENATA</button>
+                        <a href="https://api.whatsapp.com/message/5N3247B74BANF1?autoload=1&app_absent=0">
+                                    <button className="button-banda">COTIZA TU SERENATA</button>
+                        </a>
                     </div>
                 </header>
                 <section>
