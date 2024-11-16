@@ -87,7 +87,7 @@ const Reservaciones_F = () => {
             
             if (response.ok) {
                 console.log("Reserva realizada con éxito:", data);
-                aler(`Reserva realizada con éxito`);
+                alert(`Reserva realizada con éxito`);
 
                 navigate("/");
             } else {
