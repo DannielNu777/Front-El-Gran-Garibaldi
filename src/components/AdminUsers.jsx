@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Isologo from "../../src/assets/img/ISOLOGO_GARIBALDI.png";
 import add from "../assets/img/agregar.png";
-import search from "../assets/img/busqueda.png";
 import ModalUsers from "../components/ModalUsers.jsx";
 import edit from "../assets/img/editar.png";
 import shows from "../assets/img/ver.png";
@@ -22,19 +21,30 @@ const AdminUsers = () => {
     user.nombre.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Mostrar los detalles del usuario sin editar
   const handleShowUser = (user) => {
     setUserDetails(user);
     setIsEditing(false);
+    document.body.classList.add("modal-open");
   };
 
-  // Manejar la edición del usuario
   const handleEditUser = (user) => {
     setUserDetails(user);
     setIsEditing(true);
+    document.body.classList.add("modal-open");
   };
 
-  // Obtener la lista de usuarios
+  const closeModal = () => {
+    setUserDetails(null);
+    setIsEditing(false); // Aseguramos que isEditing se resetee
+    document.body.classList.remove("modal-open");
+    document.body.classList.add("modal-closed");
+    fetchUsers();
+    const timer = setTimeout(() => {
+      document.body.classList.remove("modal-closed");
+      clearTimeout(timer);
+    }, 300);
+  };
+
   const fetchUsers = async () => {
     try {
       const response = await fetch(`${apiURL}/api/show-users`, {
@@ -61,13 +71,11 @@ const AdminUsers = () => {
     setSearchTerm(e.target.value);
   };
 
-  // Abrir el modal para agregar un usuario
   const handleOpenModal = (e) => {
     e.preventDefault();
     setStateM(true);
   };
 
-  // Eliminar usuario
   const handleDeleteUser = async (email) => {
     const confirmed = window.confirm(
       `¿Estás seguro de que deseas eliminar este usuario?`
@@ -93,11 +101,9 @@ const AdminUsers = () => {
     }
   };
 
-  // Actualizar usuario
   const handleUpdateUser = async (e) => {
-    e.preventDefault(); // Evitar comportamiento por defecto del formulario
+    e.preventDefault();
 
-    // Validación de campos obligatorios
     const missingFields = [];
     if (!userDetails.email?.trim()) missingFields.push("email");
     if (!userDetails.nombre?.trim()) missingFields.push("nombre");
@@ -111,11 +117,9 @@ const AdminUsers = () => {
       return;
     }
 
-    // Prepara los datos para el back-end, incluyendo nuevo_email si se desea cambiar el email
     const { email, ...updatedData } = userDetails;
     const payload = {
       nombre: userDetails.nombre,
-      nuevo_email: userDetails.email, // Si quieres permitir actualizar el email
       telefono: userDetails.telefono,
       rol: userDetails.rol,
     };
@@ -142,15 +146,27 @@ const AdminUsers = () => {
         } catch {
           alert(`Error al actualizar usuario: ${errorText}`);
         }
-      } else {
-        const updatedUser = await response.json();
-        setUsers((prevUsers) =>
-          prevUsers.map((user) => (user.email === email ? updatedUser : user))
-        );
-        setUserDetails(null);
-        alert("Usuario actualizado con éxito.");
-        window.location.reload();
+        return;
       }
+
+      const updatedUser = await response.json();
+
+      // Actualizamos el estado de usuarios con el usuario actualizado
+      setUsers((prevUsers) =>
+        prevUsers.map((user) =>
+          user.email === email
+            ? {
+                ...user,
+                nombre: updatedUser.nombre || user.nombre,
+                telefono: updatedUser.telefono || user.telefono,
+                rol: updatedUser.rol || user.rol,
+              }
+            : user
+        )
+      );
+
+      alert("Usuario actualizado con éxito");
+      closeModal();
     } catch (error) {
       console.log("Error en la conexión:", error);
       alert("Error en la conexión. Por favor intenta de nuevo más tarde.");
@@ -240,7 +256,7 @@ const AdminUsers = () => {
                   type="text"
                   id="nombre"
                   name="nombre"
-                  value={userDetails.nombre}
+                  value={userDetails.nombre || ""}
                   onChange={(e) =>
                     setUserDetails({ ...userDetails, nombre: e.target.value })
                   }
@@ -252,8 +268,8 @@ const AdminUsers = () => {
                   type="email"
                   id="email"
                   name="email"
-                  value={userDetails.email}
-                  disabled // El email no debe poder modificarse
+                  value={userDetails.email || ""}
+                  disabled
                 />
                 <label className="label" htmlFor="telefono">
                   Teléfono:
@@ -262,7 +278,7 @@ const AdminUsers = () => {
                   type="tel"
                   id="telefono"
                   name="telefono"
-                  value={userDetails.telefono}
+                  value={userDetails.telefono || ""}
                   onChange={(e) =>
                     setUserDetails({
                       ...userDetails,
@@ -273,17 +289,32 @@ const AdminUsers = () => {
                 <label className="label" htmlFor="rol">
                   Rol:
                 </label>
-                <input
+                <select
                   type="text"
+                  className="select-text"
                   id="rol"
                   name="rol"
-                  value={userDetails.rol}
+                  value={userDetails.rol || ""}
                   onChange={(e) =>
                     setUserDetails({ ...userDetails, rol: e.target.value })
                   }
-                />
-                <button type="submit">Guardar</button>
-                <button onClick={() => setUserDetails(null)}>Cerrar</button>
+                >
+                  <option value="Administrador">Administrador</option>
+                  <option value="Caja">Caja</option>
+                  <option value="Mesero">Mesero</option>
+                  <option value="Cocina">Cocina</option>
+                  <option value="Bar">Bar</option>
+                </select>
+                <button className="user-details-button" type="submit">
+                  Guardar
+                </button>
+                <button
+                  type="button"
+                  className="user-details-button"
+                  onClick={closeModal}
+                >
+                  Cerrar
+                </button>
               </form>
             ) : (
               <>
@@ -291,7 +322,9 @@ const AdminUsers = () => {
                 <p>Email: {userDetails.email}</p>
                 <p>Teléfono: {userDetails.telefono}</p>
                 <p>Rol: {userDetails.rol}</p>
-                <button onClick={() => setUserDetails(null)}>Cerrar</button>
+                <button className="user-details-button" onClick={closeModal}>
+                  Cerrar
+                </button>
               </>
             )}
           </div>

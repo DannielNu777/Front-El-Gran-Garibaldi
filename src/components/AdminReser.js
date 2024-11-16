@@ -140,6 +140,7 @@ const AdminReser = () => {
       }
       const data = await response.json();
       setReservations(data);
+      console.log(data);
     } catch (error) {
       setError(error.message);
       console.error("Error al obtener reservaciones:", error);
@@ -169,6 +170,40 @@ const AdminReser = () => {
   // Array de años (últimos 5 años)
   const currentYear = new Date().getFullYear();
   const years = Array.from({ length: 5 }, (_, i) => currentYear - i);
+
+  const handleDeleteReservation = async () => {
+    const confirmed = window.confirm(
+      "¿Estás seguro de que deseas eliminar esta reserva?"
+    );
+    if (!confirmed) return;
+
+    try {
+      const response = await fetch(
+        `${apiURL}/api/delete-reservation/${selectedReservation.id_reserva}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      if (!response.ok) {
+        throw new Error("Error al eliminar la reserva");
+      }
+      setReservations(
+        reservations.filter(
+          (reservation) =>
+            reservation.id_reserva !== selectedReservation.id_reserva
+        )
+      );
+      handleCloseModal();
+      fetchReserv();
+    } catch (error) {
+      console.error("Error al eliminar el reporte:", error);
+      alert("Error al eliminar el reporte");
+    }
+    return;
+  };
 
   return (
     <div>
@@ -273,6 +308,13 @@ const AdminReser = () => {
                   <strong>Motivo de la Reserva:</strong>{" "}
                   {selectedReservation.motivo_reserva}
                 </p>
+                <button
+                  className="delete-button"
+                  type="button"
+                  onClick={handleDeleteReservation}
+                >
+                  Eliminar Reserva
+                </button>
               </div>
             </div>
           </div>
