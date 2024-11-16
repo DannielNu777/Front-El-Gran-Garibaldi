@@ -28,7 +28,8 @@ const Main = () => {
   const { approvedComments, isLoading } = useComent();
   console.log("comentarios", approvedComments);
   const navigate = useNavigate();
-  const handleClickR = () => navigate("/reservations");
+  const handleClickR = () => navigate("/login");
+
 
   const [slider1, setSlider1] = useState([]);
   const [slider2, setSlider2] = useState([]);

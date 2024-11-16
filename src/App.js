@@ -24,7 +24,7 @@ import AdminReser from "./components/AdminReser.js";
 import AdminComent from "./components/AdminComent.js";
 import AdminMulti from "./components/AdminMulti.js";
 import Reservaciones_Info from "./components/Reservaciones_Info.js";
-import Reservaciones_F from "./components/Reservaciones_Final.js";
+import Reservaciones_F from "./components/Reservaciones_Final.jsx";
 import Order_One from "./components/OrderMain.js";
 import New_Order from "./components/NewOrder.js";
 import Pending_Order from "./components/PendingOrders.js";
