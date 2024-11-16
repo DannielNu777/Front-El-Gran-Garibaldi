@@ -25,18 +25,6 @@ function Reservaciones_Info() {
   const handleContinue = (e) => {
     e.preventDefault();
 
-    // Display the data in an alert
-    alert(`
-            Start Date: ${startDate.toLocaleDateString()}
-            First Name: ${firstName}
-            Last Name: ${lastName}
-            Email: ${email}
-            Confirm Email: ${confirmEmail}
-            comentarios_adicionales: ${comentarios_adicionales}
-            Allergy: ${allergy}
-            Has Allergy: ${hasAllergy}
-            `);
-
     // Update reservation data (assuming this is your original intent)
     updateReservationData({
       startDate,
