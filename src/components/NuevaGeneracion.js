@@ -22,7 +22,9 @@ function NuevaGeneracion() {
                         <img className='imgMain-groups' src={NuevaGimg}/>
                         <img className='imgMain-groups-I' src={LOGONuevaG}/>
                         <a className="home-groups">MARIACHI NUEVA GENERACIÓN</a>
-                        <button className="button-mariachi-banda">COTIZA TU SERENATA</button>
+                        <a href="https://api.whatsapp.com/message/5N3247B74BANF1?autoload=1&app_absent=0">
+                                    <button className="button-banda">COTIZA TU SERENATA</button>
+                        </a>
                     </div>
                 </header>
                 <section>
